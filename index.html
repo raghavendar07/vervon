@@ -499,6 +499,62 @@
       fill: none;
     }
 
+    /* Floating circular trust seal */
+    .trust-badge {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 50;
+      width: 116px;
+      height: 116px;
+      border-radius: 999px;
+      background: var(--paper);
+      border: 1px solid #E8EAEE;
+      box-shadow: 0 1px 2px rgba(26,22,18,0.03), 0 8px 24px -18px rgba(26,22,18,0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+    }
+    .trust-badge:hover {
+      transform: scale(1.05);
+      border-color: rgba(38, 33, 246, 0.35);
+      box-shadow: 0 1px 2px rgba(26,22,18,0.05), 0 14px 32px -16px rgba(38,33,246,0.18);
+    }
+    .trust-badge:focus-visible {
+      outline: 2px solid #2621F6;
+      outline-offset: 3px;
+    }
+    .trust-badge-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .trust-badge-ring {
+      transform-origin: 60px 60px;
+      animation: trust-rotate 28s linear infinite;
+    }
+    .trust-badge:hover .trust-badge-ring {
+      animation-duration: 14s;
+    }
+    @keyframes trust-rotate {
+      to { transform: rotate(360deg); }
+    }
+    @media (max-width: 640px) {
+      .trust-badge {
+        right: 16px;
+        bottom: 16px;
+        width: 92px;
+        height: 92px;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .trust-badge-ring { animation: none; }
+      .trust-badge { transition: none; }
+      .trust-badge:hover { transform: none; }
+    }
+
     .dot-grid {
       background-image: radial-gradient(rgba(26,22,18,0.18) 1px, transparent 1px);
       background-size: 16px 16px;
@@ -1069,7 +1125,7 @@
 
 
     <!-- ============== CAPABILITIES ============== -->
-    <section id="services" class="pt-[100px] pb-[50px]">
+    <section id="services" class="pt-[80px] pb-[50px]">
       <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
         <div class="grid lg:grid-cols-12 gap-10 mb-14">
           <div class="lg:col-span-7 reveal">
@@ -1241,7 +1297,7 @@
 
 
     <!-- ============== INDUSTRIES (asymmetric grid) ============== -->
-    <section id="industries" class="relative pt-[100px] pb-[50px] industries-section overflow-hidden" style="background: var(--paper);">
+    <section id="industries" class="relative pt-[80px] pb-[50px] industries-section overflow-hidden" style="background: var(--paper);">
       <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
 
         <!-- Header (matches Capabilities composition) -->
@@ -1397,7 +1453,7 @@
     </section>
 
     <!-- ============== SERVICES — HOW WE ENGAGE ============== -->
-    <section id="partners" class="relative pt-[100px] pb-[50px] services-section overflow-hidden" style="background: var(--paper);">
+    <section id="partners" class="relative pt-[80px] pb-[50px] services-section overflow-hidden" style="background: var(--paper);">
       <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
 
         <!-- Header (matches Capabilities composition) -->
@@ -1484,7 +1540,7 @@
       </div>
     </section>
     <!-- ============== MEASURED OUTCOMES (DARK) ============== -->
-    <section id="outcomes" class="relative bg-dark text-paper grain grain-light overflow-hidden mt-[50px] py-[50px] outcomes-section">
+    <section id="outcomes" class="relative bg-dark text-paper grain grain-light overflow-hidden mt-[80px] py-[50px] outcomes-section">
       <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
 
         <!-- Header -->
@@ -1530,7 +1586,7 @@
     </section>
 
     <!-- ============== ISO 27001 CERTIFICATION ============== -->
-    <section id="iso" class="mt-[100px] py-[50px]" style="background: var(--paper);">
+    <section id="iso" class="mt-[80px] py-[50px]" style="background: var(--paper);">
       <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
         <div class="reveal iso-card grid lg:grid-cols-12 gap-8 lg:gap-12 items-center rounded-[10px] p-6 sm:p-8 lg:p-10"
              style="background: #F7F8FA; border: 1px solid #EAECEF;">
@@ -1598,7 +1654,7 @@
     </section>
 
     <!-- ============== GLOBAL PRESENCE ============== -->
-    <section id="presence" class="mt-[100px] py-[50px]" style="background: var(--paper);">
+    <section id="presence" class="mt-[80px] py-[50px]" style="background: var(--paper);">
       <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
 
         <!-- Header (asymmetric, matches Capabilities pattern) -->
@@ -1683,7 +1739,7 @@
     </section>
 
     <!-- ============== TESTIMONIAL SHOWCASE ============== -->
-    <section class="mt-[100px] py-[50px]" style="background: var(--paper);">
+    <section class="mt-[80px] py-[50px]" style="background: var(--paper);">
       <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
 
         <!-- Header (matches Capabilities pattern) -->
@@ -1793,7 +1849,7 @@
 
 
     <!-- ============== FAQ ============== -->
-    <section id="faq" class="mt-[100px] py-[50px]" style="background: var(--paper);">
+    <section id="faq" class="mt-[80px] py-[50px]" style="background: var(--paper);">
       <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
 
         <!-- Header (matches Capabilities pattern) -->
@@ -1898,7 +1954,7 @@
 
 
     <!-- ============== CTA STRIP ============== -->
-    <section id="cta" class="mt-[100px] px-6 lg:px-10 py-[50px]" style="background: var(--paper);">
+    <section id="cta" class="mt-[80px] px-6 lg:px-10 py-[50px]" style="background: var(--paper);">
       <div class="max-w-[1280px] mx-auto">
         <div class="reveal relative overflow-hidden rounded-[10px] px-8 py-16 lg:px-20 lg:py-24 cta-gradient">
           <div class="grain-overlay" aria-hidden="true"></div>
@@ -2013,6 +2069,39 @@
       </div>
     </footer>
   </main>
+
+  <!-- Floating circular trust seal -->
+  <a href="#why" class="trust-badge" aria-label="Certified Appian Partner — view our certifications">
+    <svg viewBox="0 0 120 120" class="trust-badge-svg" aria-hidden="true">
+      <defs>
+        <path id="trustCirclePath" d="M 60,60 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0" />
+      </defs>
+
+      <!-- Rotating outer text ring -->
+      <g class="trust-badge-ring">
+        <text font-family="Lexend, ui-sans-serif, system-ui, sans-serif" font-size="9.5" font-weight="500" letter-spacing="4.6" fill="#2621F6">
+          <textPath href="#trustCirclePath" startOffset="0">CERTIFIED APPIAN PARTNER</textPath>
+        </text>
+      </g>
+
+      <!-- Static decorative ring -->
+      <circle cx="60" cy="60" r="33" fill="none" stroke="rgba(38,33,246,0.18)" stroke-width="1"/>
+
+      <!-- Inner mark plate -->
+      <circle cx="60" cy="60" r="26" fill="#FFFFFF"/>
+
+      <!-- Appian wordmark -->
+      <g transform="translate(34.5 50.1) scale(0.189)" fill="#2621F6">
+        <path d="M152,34.4c-1.3,1.4-1.6,3.2-1.6,5.1v39.8h13.5V21.9L152,34.4z"/>
+        <polygon points="150.3,3.1 150.3,24.3 163.8,10 163.8,3.1 "/>
+        <path d="M143.5,29.5L143.5,29.5c-0.3-12.1-4.7-16.8-16.5-16.8c-5.5,0-25.8,0-25.8,0v90.3h13.2V79.2c2.2,0,8.2,0,12.6,0 c11.8,0,16.2-4.9,16.5-17h0C143.5,61.9,143.5,29.8,143.5,29.5z M122.2,67.9c-5.3,0-7.8,0-7.8-4.6V28.4c0-4.6,2.5-4.6,7.8-4.6 c5,0,7.8,0,7.8,4.6v34.9C130,67.9,127.2,67.8,122.2,67.9z"/>
+        <path d="M94.2,29.5L94.2,29.5c-0.3-12.1-4.7-16.8-16.5-16.8c-5.5,0-25.8,0-25.8,0v90.3H65V79.2c2.2,0,8.2,0,12.6,0 c11.8,0,16.2-4.9,16.5-17h0C94.2,61.9,94.2,29.8,94.2,29.5z M72.9,67.9c-5.3,0-7.8,0-7.8-4.6V28.4c0-4.6,2.5-4.6,7.8-4.6 c5,0,7.8,0,7.8,4.6v34.9C80.7,67.9,77.9,67.8,72.9,67.9z"/>
+        <path d="M249,79.2V28.5c0-4.6-2.8-4.6-7.8-4.6c-5.3,0-7.8,0-7.8,4.6v50.7h-13.4V12.7c0,0,20.6,0,26,0 c11.8,0,16.2,4.9,16.5,17h0c0,0.3,0,49.6,0,49.6H249z"/>
+        <path d="M213.1,29.6c-0.3-12.1-4.9-17-16.7-17c-0.6,0-13.1,0-17.5,0l0,11.3c12.8,0,12.1,0,12.7,0c5,0,7.8,0,7.8,4.6v6.6 c-2.4,0-8.1-0.1-12.3-0.1c-11.8,0-16.2,4.9-16.5,17h0c0,0.3,0,10.1,0,10.4h0c0.3,12.1,4.7,16.9,16.5,16.9c5.5,0,26,0,26,0 L213.1,29.6z M199.8,63.4c0,4.6-2.5,4.6-7.8,4.6c-5,0-7.8,0-7.8-4.6V50.8c0-4.6,2.8-4.6,7.8-4.6c5.3,0,7.8,0,7.8,4.6V63.4z"/>
+        <path d="M45,29.6c-0.3-12.1-4.9-17-16.7-17c-0.6,0-13.1,0-17.5,0l0,11.3c12.8,0,12.1,0,12.7,0c5,0,7.8,0,7.8,4.6v6.6 C29,35.1,23.3,35,19,35C7.2,35,2.8,39.8,2.5,52h0c0,0.3,0,10.1,0,10.4h0c0.3,11.4,4.2,16.3,14.6,16.9l10.7-11.3 c-1.1,0.1-2.4,0.1-4,0.1c-5,0-7.8,0-7.8-4.6V50.8c0-4.6,2.8-4.6,7.8-4.6c5.3,0,7.8,0,7.8,4.6v28.4c0.5,0,13.4,0,13.4,0L45,29.6z"/>
+      </g>
+    </svg>
+  </a>
 
   <script>
     // ====== Sticky nav glassy on scroll ======
