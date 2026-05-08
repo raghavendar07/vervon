@@ -1,0 +1,2195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Vervon Technologies — Appian Trusted &amp; Advantage Partner</title>
+  <meta name="description" content="Enterprise-grade Appian delivery for regulated industries. Banking, financial services, telecom, retail, and government — backed by one of the most certified low-code practices in APAC." />
+  <meta name="theme-color" content="#FAF6EF" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts: Lexend (single family) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300..700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#FFFFFF',
+            herobase: '#FAF6EF',
+            paper2: '#F4ECDF',
+            ink: '#1A1612',
+            inksoft: '#2A241D',
+            mid: '#6B6862',
+            hair: '#E8E8E2',
+            hairstrong: '#D4D4CC',
+            accent: '#D94F2C',
+            accentsoft: '#E89F4A',
+            dark: '#15120E',
+            darkhair: '#2D2820',
+          },
+          fontFamily: {
+            serif: ['Lexend', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            sans: ['Lexend', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            mono: ['Lexend', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root {
+      --paper: #FFFFFF;
+      --hero-base: #FAF6EF;
+      --paper-2: #F4ECDF;
+      --ink: #1A1612;
+      --ink-soft: #2A241D;
+      --mid: #6B6862;
+      --mid-2: #9A938B;
+      --hair: #E8E8E2;
+      --hair-strong: #D4D4CC;
+      --accent: #D94F2C;
+      --accent-soft: #E89F4A;
+      --dark: #15120E;
+      --dark-hair: #2D2820;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .font-serif, .font-display {
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+    }
+    .font-mono {
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    /* Focus ring for accessibility */
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+
+    /* Grain overlay (inline SVG noise) */
+    .grain::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      opacity: 0.20;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.10  0 0 0 0 0.08  0 0 0 0 0.06  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      background-size: 240px 240px;
+    }
+    .grain-light::before {
+      mix-blend-mode: overlay;
+      opacity: 0.08;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    }
+
+    /* Hero gradient stack */
+    .hero-gradient {
+      background:
+        radial-gradient(ellipse 55% 45% at 82% 18%, rgba(245, 195, 158, 0.62), transparent 62%),
+        radial-gradient(ellipse 45% 38% at 22% 28%, rgba(232, 175, 175, 0.48), transparent 65%),
+        radial-gradient(ellipse 65% 55% at 50% 88%, rgba(212, 196, 220, 0.42), transparent 60%),
+        radial-gradient(ellipse 38% 32% at 92% 75%, rgba(240, 188, 133, 0.38), transparent 60%),
+        radial-gradient(ellipse 50% 40% at 8% 80%, rgba(228, 198, 168, 0.35), transparent 60%),
+        var(--hero-base);
+    }
+
+    /* CTA strip soft gradient */
+    .cta-gradient {
+      background:
+        radial-gradient(50% 80% at 80% 50%, rgba(240,188,133,0.45), rgba(240,188,133,0) 70%),
+        radial-gradient(60% 80% at 15% 50%, rgba(232,181,181,0.45), rgba(232,181,181,0) 70%),
+        var(--paper);
+    }
+
+    /* Pills */
+    .pill { border-radius: 999px; }
+
+    .btn-black, .btn-primary {
+      background: var(--ink);
+      color: #FFFFFF;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform .25s ease, background .2s ease;
+    }
+    .btn-black:hover, .btn-primary:hover { transform: translateY(-1px); background: #000; }
+    .btn-black .arrow { transition: transform .25s ease; }
+    .btn-black:hover .arrow { transform: translateX(3px); }
+
+    /* Grain overlay element (used inside CTA card) */
+    .grain-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      opacity: 0.18;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.10  0 0 0 0 0.08  0 0 0 0 0.06  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      background-size: 240px 240px;
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--ink);
+      padding: 13px 21px;
+      border-radius: 999px;
+      border: 1px solid rgba(26,22,18,0.18);
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background .2s ease;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.8); }
+
+    /* Hairline cards */
+    .card-hair {
+      border: 1px solid var(--hair);
+      background: rgba(255,255,255,0.55);
+      transition: transform .35s ease, box-shadow .35s ease, border-color .25s ease;
+    }
+    .card-hair:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px -28px rgba(26,22,18,0.25);
+      border-color: #D8CDB8;
+    }
+
+    /* Filled cards w/ lift on hover */
+    .card-lift {
+      transition: transform .35s ease, box-shadow .35s ease, border-color .25s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px -32px rgba(26,22,18,0.28);
+      border-color: var(--hair-strong) !important;
+    }
+
+    /* ISO certification card */
+    .iso-card {
+      transition: transform 350ms ease, box-shadow 350ms ease, border-color 350ms ease;
+      box-shadow: 0 1px 2px rgba(26,22,18,0.04), 0 16px 50px -32px rgba(26,22,18,0.16);
+    }
+    .iso-card:hover {
+      transform: translateY(-3px);
+      border-color: #DCDFE5 !important;
+      box-shadow: 0 1px 2px rgba(26,22,18,0.05), 0 24px 60px -28px rgba(26,22,18,0.22);
+    }
+    .iso-check {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: #D94F2C;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      box-shadow: 0 0 0 4px rgba(217,79,44,0.10);
+    }
+    .iso-badge-wrap {
+      filter: drop-shadow(0 24px 40px rgba(26,22,18,0.18));
+      transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .iso-card:hover .iso-badge-wrap { transform: translateY(-2px) scale(1.015); }
+
+    /* Measured Outcomes (dark) */
+    .outcomes-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 40% at 50% 0%, rgba(217, 79, 44, 0.10), transparent 70%),
+        radial-gradient(ellipse 50% 50% at 80% 90%, rgba(91, 143, 191, 0.10), transparent 70%);
+      z-index: 0;
+    }
+    .outcomes-section > .relative { z-index: 1; }
+
+    .outcome-card {
+      position: relative;
+      padding: 32px 28px 30px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+      border: 1px solid rgba(250,246,239,0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: transform 350ms ease, border-color 350ms ease, box-shadow 350ms ease, background 350ms ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 220px;
+    }
+    .outcome-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(217, 79, 44, 0.35);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      box-shadow:
+        0 0 0 1px rgba(217, 79, 44, 0.10),
+        0 24px 60px -28px rgba(217, 79, 44, 0.25),
+        0 0 80px -20px rgba(217, 79, 44, 0.18);
+    }
+    .outcome-label {
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(250,246,239,0.55);
+    }
+    .outcome-num {
+      margin-top: 24px;
+      font-size: 64px;
+      line-height: 0.95;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: var(--paper);
+      display: inline-flex;
+      align-items: baseline;
+    }
+    @media (min-width: 1024px) {
+      .outcome-num { font-size: 72px; }
+    }
+    .outcome-unit {
+      color: #D94F2C;
+      margin-left: 2px;
+    }
+    .outcome-desc {
+      margin-top: auto;
+      padding-top: 18px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: rgba(250,246,239,0.72);
+    }
+
+    /* Testimonial showcase card */
+    .testi-card {
+      box-shadow: 0 1px 2px rgba(26,22,18,0.04), 0 12px 40px -24px rgba(26,22,18,0.18);
+      transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+    }
+    .testi-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 1px 2px rgba(26,22,18,0.05), 0 24px 60px -28px rgba(26,22,18,0.24);
+      border-color: #DCDFE5;
+    }
+    .testi-img {
+      transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .testi-card:hover .testi-img {
+      transform: scale(1.04);
+    }
+
+    /* Carousel dot indicators */
+    .testi-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #D6D6D0;
+      border: 0;
+      cursor: pointer;
+      padding: 0;
+      transition: background 300ms ease, transform 300ms ease, width 300ms ease;
+    }
+    .testi-dot:hover {
+      background: #9A938B;
+      transform: scale(1.15);
+    }
+    .testi-dot.is-active {
+      background: var(--ink);
+      width: 24px;
+      transform: scale(1);
+    }
+    .testi-dot.is-active:hover {
+      transform: scale(1.05);
+    }
+
+    /* FAQ accordion */
+    .faq-item {
+      transition: box-shadow 300ms ease, border-color 300ms ease, transform 300ms ease;
+    }
+    .faq-item[open] {
+      box-shadow: 0 1px 2px rgba(26,22,18,0.04), 0 18px 50px -28px rgba(26,22,18,0.18);
+      border-color: #DCDFE5 !important;
+    }
+    .faq-summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      user-select: none;
+    }
+    .faq-summary::-webkit-details-marker { display: none; }
+    @media (min-width: 1024px) {
+      .faq-summary { padding: 26px 32px; }
+    }
+    .faq-q {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+    @media (min-width: 1024px) {
+      .faq-q { font-size: 18px; }
+    }
+    .faq-summary:hover .faq-q { color: var(--ink); }
+    .faq-summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+      border-radius: inherit;
+    }
+
+    /* Plus / minus icon (two crossed lines) */
+    .faq-icon {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid #DCDFE5;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 300ms ease, border-color 300ms ease;
+    }
+    .faq-summary:hover .faq-icon { border-color: #BFC5CD; }
+    .faq-icon-h, .faq-icon-v {
+      position: absolute;
+      background: var(--ink);
+      border-radius: 1px;
+      transition: transform 300ms ease, opacity 300ms ease, background 300ms ease;
+    }
+    .faq-icon-h { width: 12px; height: 1.5px; }
+    .faq-icon-v { width: 1.5px; height: 12px; }
+    .faq-item[open] .faq-icon {
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+    .faq-item[open] .faq-icon-h,
+    .faq-item[open] .faq-icon-v { background: #FFFFFF; }
+    .faq-item[open] .faq-icon-v {
+      transform: scaleY(0);
+      opacity: 0;
+    }
+
+    /* Smooth height (CSS grid trick) */
+    .faq-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 350ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .faq-item[open] .faq-content {
+      grid-template-rows: 1fr;
+    }
+    .faq-body {
+      overflow: hidden;
+      padding: 0 24px;
+    }
+    @media (min-width: 1024px) {
+      .faq-body { padding: 0 32px; }
+    }
+    .faq-body p {
+      margin: 0;
+      padding-bottom: 24px;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+      max-width: 720px;
+    }
+    @media (min-width: 1024px) {
+      .faq-body p { padding-bottom: 28px; font-size: 15.5px; }
+    }
+
+    /* Carousel arrow buttons */
+    .testi-arrow {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid #DCDFE5;
+      background: transparent;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 300ms ease, border-color 300ms ease, color 300ms ease, transform 300ms ease;
+    }
+    .testi-arrow:hover {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+    .testi-arrow:active {
+      transform: translateY(0);
+    }
+    .testi-arrow:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Mono labels */
+    .mono-label, .label-mono {
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .italic-accent {
+      font-style: normal;
+      color: var(--accent);
+      font-weight: 600;
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+    }
+
+    /* Pulsing dot */
+    @keyframes pulseDot {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(217,79,44,0.55); }
+      50% { box-shadow: 0 0 0 6px rgba(217,79,44,0); }
+    }
+    .dot-pulse {
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--accent);
+      animation: pulseDot 1.8s ease-in-out infinite;
+    }
+
+    /* Workflow dashed flow */
+    @keyframes dash-flow {
+      to { stroke-dashoffset: -36; }
+    }
+    .flow-dash {
+      stroke: var(--accent);
+      stroke-width: 1.4;
+      fill: none;
+      stroke-dasharray: 6 6;
+      animation: dash-flow 1.6s linear infinite;
+    }
+    .flow-base {
+      stroke: #B8AE9C;
+      stroke-width: 1.3;
+      fill: none;
+    }
+
+    .dot-grid {
+      background-image: radial-gradient(rgba(26,22,18,0.18) 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+
+    /* Reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(8px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Sticky nav glassy state */
+    .nav-glass {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: saturate(180%) blur(14px);
+      -webkit-backdrop-filter: saturate(180%) blur(14px);
+      border-bottom: 1px solid var(--hair);
+    }
+
+    /* Bento: shared borders, no gaps */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--dark-hair);
+      border-left: 1px solid var(--dark-hair);
+    }
+    .bento > article {
+      border-right: 1px solid var(--dark-hair);
+      border-bottom: 1px solid var(--dark-hair);
+      padding: 40px 32px 36px;
+      min-height: 280px;
+    }
+    @media (max-width: 900px) {
+      .bento { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 600px) {
+      .bento { grid-template-columns: 1fr; }
+    }
+
+    /* Capabilities 3-col shared border */
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      border-top: 1px solid var(--hair);
+      border-left: 1px solid var(--hair);
+    }
+    .cap-grid > article {
+      border-right: 1px solid var(--hair);
+      border-bottom: 1px solid var(--hair);
+      padding: 40px 32px;
+      background: rgba(255,255,255,0.4);
+    }
+    @media (max-width: 900px) {
+      .cap-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      border: 1px solid var(--hair);
+      background: rgba(255,255,255,0.45);
+    }
+    .stats-bar > div {
+      padding: 28px 28px 30px;
+      border-right: 1px solid var(--hair);
+    }
+    .stats-bar > div:last-child { border-right: 0; }
+    @media (max-width: 900px) {
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .stats-bar > div { border-bottom: 1px solid var(--hair); }
+    }
+    @media (max-width: 520px) {
+      .stats-bar { grid-template-columns: 1fr; }
+    }
+
+    /* Industries — asymmetric card grid */
+    .industries-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 50% 35% at 8% 8%, rgba(91, 143, 191, 0.10), transparent 70%),
+        radial-gradient(ellipse 55% 40% at 92% 95%, rgba(232, 175, 175, 0.18), transparent 70%);
+      z-index: 0;
+    }
+    .ind-card {
+      position: relative;
+      background: #FFFFFF;
+      border: 1px solid #E6EAF0;
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 350ms ease, box-shadow 350ms ease, border-color 350ms ease;
+    }
+    .ind-card:hover {
+      transform: translateY(-3px);
+      border-color: #BFC9D6;
+      box-shadow: 0 1px 2px rgba(26,22,18,0.04), 0 24px 60px -32px rgba(26,22,18,0.22);
+    }
+    .ind-visual {
+      position: relative;
+      height: 180px;
+      background: linear-gradient(135deg, #F4F7FB 0%, #EAF1F8 100%);
+      border-bottom: 1px solid #E6EAF0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .ind-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(91,143,191,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(91,143,191,0.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 90%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 90%);
+      pointer-events: none;
+    }
+    .ind-visual-banking { background: linear-gradient(135deg, #F4F7FB 0%, #EAF1F8 100%); }
+    .ind-visual-gov { background: linear-gradient(135deg, #F2F4F8 0%, #E7EBF1 100%); }
+    .ind-visual-telecom { background: linear-gradient(135deg, #F4F7FB 0%, #E8EFF7 100%); }
+    .ind-visual-retail { background: linear-gradient(135deg, #F6F4F0 0%, #EFEBE3 100%); }
+    .ind-visual-fs { background: linear-gradient(135deg, #F4F7FB 0%, #EAF1F8 100%); }
+    .ind-art {
+      position: relative;
+      width: 70%;
+      max-width: 220px;
+      height: auto;
+      transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .ind-card:hover .ind-art { transform: scale(1.04); }
+    .ind-body {
+      padding: 26px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    @media (min-width: 1024px) {
+      .ind-body { padding: 28px 32px 30px; }
+    }
+    .ind-title {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+    @media (min-width: 1024px) {
+      .ind-title { font-size: 24px; }
+    }
+    .ind-desc {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--mid);
+      max-width: 480px;
+    }
+
+    /* Services — How we engage (premium card grid) */
+    .services-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 40% at 90% 0%, rgba(245, 195, 158, 0.20), transparent 70%),
+        radial-gradient(ellipse 50% 35% at 10% 100%, rgba(212, 196, 220, 0.18), transparent 70%);
+      z-index: 0;
+    }
+    .svc-card {
+      position: relative;
+      background: #F7F8FA;
+      border: 1px solid #E6EAF0;
+      border-radius: 24px;
+      padding: 28px 28px 26px;
+      display: flex;
+      flex-direction: column;
+      min-height: 220px;
+      transition: transform 350ms ease, box-shadow 350ms ease, border-color 350ms ease;
+    }
+    @media (min-width: 1024px) {
+      .svc-card { padding: 32px 32px 28px; min-height: 240px; }
+    }
+    .svc-card:hover {
+      transform: translateY(-3px);
+      border-color: #DCDFE5;
+      box-shadow: 0 1px 2px rgba(26,22,18,0.04), 0 20px 50px -32px rgba(26,22,18,0.20);
+    }
+    .svc-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #EAF1F8;
+      border: 1px solid #D8E3EE;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #3F6FA0;
+      transition: background 300ms ease, color 300ms ease, border-color 300ms ease;
+    }
+    .svc-card:hover .svc-icon {
+      background: #DCE8F4;
+      color: #2C5680;
+      border-color: #BFD0E2;
+    }
+    .svc-num {
+      margin-top: 18px;
+      font-family: 'Lexend', ui-sans-serif, sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .svc-title {
+      margin-top: 8px;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+    @media (min-width: 1024px) {
+      .svc-title { font-size: 24px; }
+    }
+    .svc-desc {
+      margin-top: 10px;
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--mid);
+      max-width: 540px;
+    }
+    .svc-link {
+      margin-top: auto;
+      padding-top: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+      transition: color 250ms ease, gap 250ms ease;
+    }
+    .svc-link:hover { color: var(--accent); gap: 10px; }
+    /* Wider finale card: lay out as horizontal row on desktop */
+
+    /* Industry tab pill */
+    .tab-btn {
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 10px 4px;
+      color: var(--mid);
+      border-bottom: 1px solid transparent;
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .tab-btn[aria-selected="true"] {
+      color: var(--ink);
+      border-bottom-color: var(--accent);
+    }
+    .tab-btn:hover { color: var(--ink); }
+
+    /* Gradient testimonial card */
+    .grad-card {
+      background: linear-gradient(135deg, #F5C9A8 0%, #E8B5B5 50%, #D4C4D8 100%);
+      border-radius: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Leadership initials backgrounds */
+    .portrait {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 300;
+      font-size: 120px;
+      letter-spacing: -0.04em;
+      color: rgba(26,22,18,0.78);
+      border: 1px solid var(--hair);
+      position: relative;
+      overflow: hidden;
+    }
+    .portrait-1 { background: radial-gradient(120% 90% at 20% 20%, #F5C9A8, #E8B5B5 60%, #D4C4D8); }
+    .portrait-2 { background: radial-gradient(120% 90% at 80% 30%, #F0BC85, #F5C9A8 55%, #E8B5B5); }
+    .portrait-3 { background: radial-gradient(120% 90% at 50% 80%, #D4C4D8, #E8B5B5 60%, #F5C9A8); }
+
+    /* Map dot pulse */
+    @keyframes mapPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.6); opacity: 0.4; }
+    }
+    .map-dot { transform-origin: center; animation: mapPulse 2.2s ease-in-out infinite; }
+
+    /* Mobile drawer */
+    .drawer { transform: translateX(100%); transition: transform .35s ease; }
+    .drawer.open { transform: translateX(0); }
+
+    /* Headline tightening */
+    .h-display {
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      line-height: 1.02;
+    }
+    .h-section {
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 300;
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+    }
+
+    /* Browser frame */
+    .browser-frame {
+      border: 1px solid var(--hair);
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 30px 80px -50px rgba(26,22,18,0.45);
+      overflow: hidden;
+    }
+    .browser-bar {
+      background: var(--paper2);
+      border-bottom: 1px solid var(--hair);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .tl-dot { width: 10px; height: 10px; border-radius: 999px; }
+  </style>
+</head>
+<body class="bg-paper text-ink antialiased">
+
+  <!-- ============== STICKY NAV ============== -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-colors duration-300">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between">
+      <a href="#top" class="flex items-baseline gap-1.5">
+        <span class="font-serif text-[26px] font-medium tracking-tight">Vervon</span>
+        <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-mid mb-0.5">tech</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-8 text-[14px] text-inksoft" aria-label="Primary">
+        <a href="#industries" class="hover:text-accent transition-colors">Industries</a>
+        <a href="#services" class="hover:text-accent transition-colors">Services</a>
+        <a href="#why" class="hover:text-accent transition-colors">Why Vervon</a>
+        <a href="#partners" class="hover:text-accent transition-colors">Partners</a>
+        <a href="#careers" class="hover:text-accent transition-colors">Careers</a>
+      </nav>
+      <div class="hidden lg:flex items-center gap-5">
+        <a href="#cta" class="btn-black text-[13px] py-3 px-5">
+          Book a demo
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+      <button id="menuToggle" class="lg:hidden p-2 rounded-md border border-hair bg-white/60" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div id="mobileDrawer" class="drawer lg:hidden fixed top-0 right-0 h-screen w-[88%] max-w-[380px] bg-paper border-l border-hair z-50 p-6 flex flex-col">
+      <div class="flex items-center justify-between mb-10">
+        <span class="font-serif text-[24px]">Vervon<span class="font-mono text-[10px] tracking-[0.2em] uppercase text-mid ml-1">tech</span></span>
+        <button id="menuClose" class="p-2 border border-hair rounded-md" aria-label="Close menu">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-5 text-[20px] font-serif" aria-label="Mobile">
+        <a href="#industries" data-close>Industries</a>
+        <a href="#services" data-close>Services</a>
+        <a href="#why" data-close>Why Vervon</a>
+        <a href="#partners" data-close>Partners</a>
+        <a href="#careers" data-close>Careers</a>
+      </nav>
+      <div class="mt-auto pt-8 border-t border-hair">
+        <div class="font-mono text-[11px] text-mid leading-relaxed">
+          AU +61 0421 531 111<br/>
+          IN +91 91676 31111
+        </div>
+        <a href="#cta" data-close class="btn-black mt-5 w-full justify-center">Book Appian assessment <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============== HERO ============== -->
+    <section class="relative hero-gradient grain overflow-hidden pt-[140px] pb-[120px]">
+      <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
+        <!-- Eyebrow pill -->
+        <div class="reveal flex justify-center">
+          <div class="inline-flex items-center gap-2 pill bg-white/50 backdrop-blur border border-white/60 px-4 py-1.5">
+            <span class="dot-pulse" aria-hidden="true"></span>
+            <span class="font-mono text-[11px] tracking-[0.18em] uppercase text-inksoft">Appian Trusted &amp; Advantage Partner</span>
+          </div>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="reveal h-display text-center mt-7 text-[44px] sm:text-[58px] md:text-[68px] lg:text-[78px] max-w-[1080px] mx-auto">
+          Hyperautomation,<br/>
+          <span class="italic-accent">engineered</span> on Appian.
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="reveal mt-7 text-center text-[17px] md:text-[19px] text-inksoft max-w-[680px] mx-auto leading-relaxed">
+          We deliver low-code transformation programs on the Appian Platform — extended with AI, ML, and RPA, and backed by 30+ years of industry expertise.
+        </p>
+
+        <!-- CTAs -->
+        <div class="reveal mt-9 flex flex-col sm:flex-row gap-3 justify-center items-center">
+          <a href="#cta" class="btn-black">
+            Book a demo
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#services" class="btn-ghost">Explore the services</a>
+        </div>
+
+        <!-- Metadata strip -->
+        <div class="reveal mt-10 flex justify-center">
+          <div class="font-mono text-[11px] tracking-[0.16em] uppercase text-mid text-center">
+            FOUNDED 2021 &nbsp;<span class="text-accent">◇</span>&nbsp; HUBS SYD · HYD &nbsp;<span class="text-accent">◇</span>&nbsp; FOCUS Appian-native
+          </div>
+        </div>
+
+        <!-- ============== PRODUCT VISUALIZATION ============== -->
+        <div class="reveal mt-16 lg:mt-20 max-w-[1100px] mx-auto">
+          <div class="browser-frame">
+            <div class="browser-bar">
+              <span class="tl-dot" style="background:#F25F5C"></span>
+              <span class="tl-dot" style="background:#F0BC85"></span>
+              <span class="tl-dot" style="background:#7FB069"></span>
+              <div class="flex-1 mx-3">
+                <div class="bg-white border border-hair rounded-md px-3 py-1.5 font-mono text-[11px] text-inksoft flex items-center gap-2 normal-case" style="letter-spacing:0;">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M9 5V3a3 3 0 1 0-6 0v2M2.5 5h7v6h-7z" stroke="#6B6862" stroke-width="1"/></svg>
+                  workflow.appian / loan-origination.v3
+                </div>
+              </div>
+              <div class="font-mono text-[10px] tracking-[0.18em] text-accent flex items-center gap-1.5">
+                <span class="dot-pulse" style="width:6px;height:6px"></span> LIVE
+              </div>
+            </div>
+
+            <!-- Workflow canvas -->
+            <div class="relative dot-grid p-6 sm:p-10" style="background-color:#FCFAF5;">
+              <svg viewBox="0 0 1000 520" class="w-full h-auto" role="img" aria-label="Illustrative Appian loan origination workflow diagram">
+                <defs>
+                  <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                    <path d="M0 0 L10 5 L0 10 z" fill="#B8AE9C"/>
+                  </marker>
+                  <marker id="arrowCoral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                    <path d="M0 0 L10 5 L0 10 z" fill="#D94F2C"/>
+                  </marker>
+                </defs>
+
+                <!-- Connecting lines (gray base + coral animated) -->
+                <!-- Intake -> Verify -->
+                <path class="flow-base" d="M 175 130 L 285 130" marker-end="url(#arrowGray)"/>
+                <path class="flow-dash" d="M 175 130 L 285 130"/>
+                <!-- Verify -> Risk -->
+                <path class="flow-base" d="M 445 130 L 555 130" marker-end="url(#arrowGray)"/>
+                <path class="flow-dash" d="M 445 130 L 555 130"/>
+                <!-- Risk -> Decision -->
+                <path class="flow-base" d="M 715 130 L 825 130" marker-end="url(#arrowGray)"/>
+                <path class="flow-dash" d="M 715 130 L 825 130"/>
+
+                <!-- Decision branches -->
+                <!-- Decision -> Underwriter -->
+                <path class="flow-base" d="M 870 200 C 870 270, 540 280, 540 340" marker-end="url(#arrowGray)"/>
+                <path class="flow-dash" d="M 870 200 C 870 270, 540 280, 540 340"/>
+                <!-- Decision -> Notification -->
+                <path class="flow-base" d="M 870 200 C 870 290, 200 300, 200 350" marker-end="url(#arrowGray)"/>
+                <path class="flow-dash" d="M 870 200 C 870 290, 200 300, 200 350"/>
+
+                <!-- Customer 360 dashed link -->
+                <path d="M 555 130 L 555 50 L 920 50 L 920 95" stroke="#B8AE9C" stroke-width="1" stroke-dasharray="3 4" fill="none"/>
+
+                <!-- Node: Loan Intake (start) -->
+                <foreignObject x="50" y="92" width="135" height="76">
+                  <div xmlns="http://www.w3.org/1999/xhtml" style="border:1px solid #E5DCCB;background:#fff;border-radius:10px;padding:10px 12px;font-family:Lexend,sans-serif;">
+                    <div style="display:flex;align-items:center;gap:6px;font-family:Lexend,sans-serif;font-size:9px;letter-spacing:0.14em;color:#6B6862;text-transform:uppercase;">
+                      <span style="width:6px;height:6px;background:#7FB069;border-radius:99px;display:inline-block"></span> START
+                    </div>
+                    <div style="font-size:13px;font-weight:500;margin-top:4px;color:#1A1612">Loan Intake</div>
+                    <div style="font-size:10px;color:#6B6862;margin-top:2px">Customer submits</div>
+                  </div>
+                </foreignObject>
+
+                <!-- Node: Document Verify -->
+                <foreignObject x="285" y="92" width="160" height="76">
+                  <div xmlns="http://www.w3.org/1999/xhtml" style="border:1px solid #E5DCCB;background:#fff;border-radius:10px;padding:10px 12px;font-family:Lexend,sans-serif;">
+                    <div style="display:flex;align-items:center;gap:6px;font-family:Lexend,sans-serif;font-size:9px;letter-spacing:0.14em;color:#6B6862;text-transform:uppercase;">
+                      <span style="width:6px;height:6px;background:#5B8FBF;border-radius:99px;display:inline-block"></span> PROCESS
+                    </div>
+                    <div style="font-size:13px;font-weight:500;margin-top:4px;color:#1A1612">Document Verify</div>
+                    <div style="font-size:10px;color:#6B6862;margin-top:2px">OCR &middot; KYC checks</div>
+                  </div>
+                </foreignObject>
+
+                <!-- Node: Risk Score -->
+                <foreignObject x="555" y="92" width="160" height="76">
+                  <div xmlns="http://www.w3.org/1999/xhtml" style="border:1px solid #E5DCCB;background:#fff;border-radius:10px;padding:10px 12px;font-family:Lexend,sans-serif;">
+                    <div style="display:flex;align-items:center;gap:6px;font-family:Lexend,sans-serif;font-size:9px;letter-spacing:0.14em;color:#6B6862;text-transform:uppercase;">
+                      <span style="width:6px;height:6px;background:#5B8FBF;border-radius:99px;display:inline-block"></span> AI / ML
+                    </div>
+                    <div style="font-size:13px;font-weight:500;margin-top:4px;color:#1A1612">Risk Score</div>
+                    <div style="font-size:10px;color:#6B6862;margin-top:2px">Model v2.4 &middot; PD/LGD</div>
+                  </div>
+                </foreignObject>
+
+                <!-- Node: Decision Engine (highlighted coral) -->
+                <foreignObject x="825" y="92" width="160" height="106">
+                  <div xmlns="http://www.w3.org/1999/xhtml" style="border:1.5px solid #D94F2C;background:#fff;border-radius:10px;padding:10px 12px;font-family:Lexend,sans-serif;box-shadow:0 0 0 3px rgba(217,79,44,0.10);">
+                    <div style="display:flex;align-items:center;gap:6px;font-family:Lexend,sans-serif;font-size:9px;letter-spacing:0.14em;color:#D94F2C;text-transform:uppercase;">
+                      <span style="width:6px;height:6px;background:#D94F2C;border-radius:99px;display:inline-block"></span> Decision
+                    </div>
+                    <div style="font-size:13px;font-weight:500;margin-top:4px;color:#1A1612">Decision Engine</div>
+                    <div style="font-size:10px;color:#6B6862;margin-top:2px">Auto-approve / refer</div>
+                    <div style="margin-top:8px;display:flex;gap:6px;font-family:Lexend,sans-serif;font-size:9px">
+                      <span style="background:#F4ECDF;padding:2px 6px;border-radius:4px;color:#1A1612">STP 64%</span>
+                      <span style="background:#F4ECDF;padding:2px 6px;border-radius:4px;color:#1A1612">REF 36%</span>
+                    </div>
+                  </div>
+                </foreignObject>
+
+                <!-- Branch: Underwriter Review (manual) -->
+                <foreignObject x="455" y="335" width="170" height="76">
+                  <div xmlns="http://www.w3.org/1999/xhtml" style="border:1px solid #E5DCCB;background:#fff;border-radius:10px;padding:10px 12px;font-family:Lexend,sans-serif;">
+                    <div style="display:flex;align-items:center;gap:6px;font-family:Lexend,sans-serif;font-size:9px;letter-spacing:0.14em;color:#6B6862;text-transform:uppercase;">
+                      <span style="width:6px;height:6px;background:#9C9489;border-radius:99px;display:inline-block"></span> MANUAL
+                    </div>
+                    <div style="font-size:13px;font-weight:500;margin-top:4px;color:#1A1612">Underwriter Review</div>
+                    <div style="font-size:10px;color:#6B6862;margin-top:2px">SLA &middot; 4h queue</div>
+                  </div>
+                </foreignObject>
+
+                <!-- Branch: Notification (auto STP) -->
+                <foreignObject x="115" y="345" width="170" height="76">
+                  <div xmlns="http://www.w3.org/1999/xhtml" style="border:1px solid #E5DCCB;background:#fff;border-radius:10px;padding:10px 12px;font-family:Lexend,sans-serif;">
+                    <div style="display:flex;align-items:center;gap:6px;font-family:Lexend,sans-serif;font-size:9px;letter-spacing:0.14em;color:#6B6862;text-transform:uppercase;">
+                      <span style="width:6px;height:6px;background:#7FB069;border-radius:99px;display:inline-block"></span> AUTO &middot; STP
+                    </div>
+                    <div style="font-size:13px;font-weight:500;margin-top:4px;color:#1A1612">Notification</div>
+                    <div style="font-size:10px;color:#6B6862;margin-top:2px">Email &middot; SMS &middot; portal</div>
+                  </div>
+                </foreignObject>
+
+                <!-- Side: Customer 360 -->
+                <foreignObject x="855" y="290" width="125" height="106">
+                  <div xmlns="http://www.w3.org/1999/xhtml" style="border:1px dashed #B8AE9C;background:rgba(255,255,255,0.6);border-radius:10px;padding:10px 12px;font-family:Lexend,sans-serif;">
+                    <div style="font-family:Lexend,sans-serif;font-size:9px;letter-spacing:0.14em;color:#6B6862;text-transform:uppercase;">CUSTOMER 360</div>
+                    <div style="font-size:12px;font-weight:500;margin-top:6px;color:#1A1612">Linked record</div>
+                    <div style="font-size:10px;color:#6B6862;margin-top:2px">Read-only mirror</div>
+                    <div style="font-family:Lexend,sans-serif;font-size:9px;color:#D94F2C;margin-top:6px">↗ open</div>
+                  </div>
+                </foreignObject>
+              </svg>
+
+              <!-- Canvas footer -->
+              <div class="mt-2 flex items-center justify-between font-mono text-[10px] tracking-[0.14em] text-mid uppercase">
+                <span>Illustrative · not a real customer flow</span>
+                <span>v3.1.0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== TRUSTED BY LEADERS ============== -->
+    <section class="py-14 lg:py-16" style="background: var(--paper);">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+        <h2 class="reveal text-center text-[20px] lg:text-[24px] font-medium leading-tight" style="color: var(--ink);">
+          Trusted by <span style="color:#D94F2C;font-weight:600;">500+ leaders</span> across industries
+        </h2>
+        <div class="reveal mt-6 lg:mt-8 flex justify-center">
+          <img
+            src="assets/clients-strip.png"
+            alt="Trusted by Westpac, Pfizer, Appian, Howard Hughes, Honeywell, Novartis, MUFG, Infosys, Ramsay Health Care, Chola, DXC Technology, WNS Vuram, Accenture, and Persistent"
+            class="w-full max-w-[1280px] h-auto"
+            style="mix-blend-mode: multiply;"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============== CAPABILITIES ============== -->
+    <section id="services" class="pb-[96px] lg:pb-[128px]">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div class="grid lg:grid-cols-12 gap-10 mb-14">
+          <div class="lg:col-span-7 reveal">
+            <div class="mono-label mb-5">01 · Capabilities</div>
+            <h2 class="h-section text-[42px] md:text-[56px] max-w-[640px]">
+              Built around <span class="italic-accent">Appian.</span> Extended with AI, ML, and RPA.
+            </h2>
+          </div>
+          <div class="lg:col-span-5 lg:col-start-8 lg:self-end reveal">
+            <p class="text-inksoft text-[15px] leading-relaxed max-w-[440px] lg:ml-auto">
+              We are an Appian-native consultancy. Process mining, intelligent automation, and integration are not adjacencies — they are how we make Appian workflows decide, act, and connect with the rest of your enterprise stack.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal mt-16 lg:mt-20 grid md:grid-cols-3 gap-5 lg:gap-6">
+
+          <!-- Card 1 -->
+          <div class="card-lift cursor-default rounded-2xl p-7 lg:p-8" style="background: #F7F8FA; border: 1px solid #E6EAF0;">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl" style="background: #FFFFFF; border: 1px solid #E8E8E2;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="color: var(--ink-soft);" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" rx="1"/>
+                <rect x="14" y="3" width="7" height="7" rx="1"/>
+                <rect x="3" y="14" width="7" height="7" rx="1"/>
+                <rect x="14" y="14" width="7" height="7" rx="1"/>
+              </svg>
+            </div>
+            <h3 class="mt-7 text-[20px] lg:text-[22px] font-semibold leading-tight" style="color: var(--ink);">
+              Appian Low-Code Platform
+            </h3>
+            <p class="mt-3 text-[14.5px]" style="color: var(--mid); line-height: 1.6;">
+              Process mining, workflow, and BPM — built natively on Appian by engineers who've earned the platform's hardest certifications.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card-lift cursor-default rounded-2xl p-7 lg:p-8" style="background: #F7F8FA; border: 1px solid #E6EAF0;">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl" style="background: #FFFFFF; border: 1px solid #E8E8E2;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="color: var(--ink-soft);" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.49 8.49l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.49-8.49l2.83-2.83"/>
+              </svg>
+            </div>
+            <h3 class="mt-7 text-[20px] lg:text-[22px] font-semibold leading-tight" style="color: var(--ink);">
+              Intelligent Automation
+            </h3>
+            <p class="mt-3 text-[14.5px]" style="color: var(--mid); line-height: 1.6;">
+              RPA bots and AI/ML models embedded directly into Appian flows — making decisions, not just routing tasks.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card-lift cursor-default rounded-2xl p-7 lg:p-8" style="background: #F7F8FA; border: 1px solid #E6EAF0;">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl" style="background: #FFFFFF; border: 1px solid #E8E8E2;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="color: var(--ink-soft);" aria-hidden="true">
+                <circle cx="12" cy="5" r="2"/>
+                <circle cx="5" cy="19" r="2"/>
+                <circle cx="19" cy="19" r="2"/>
+                <path d="M12 7v6M12 13l-7 6M12 13l7 6"/>
+              </svg>
+            </div>
+            <h3 class="mt-7 text-[20px] lg:text-[22px] font-semibold leading-tight" style="color: var(--ink);">
+              Enterprise Integration
+            </h3>
+            <p class="mt-3 text-[14.5px]" style="color: var(--mid); line-height: 1.6;">
+              APIs, legacy systems, and data layer modernization — so Appian doesn't sit in a silo, it becomes the orchestration layer.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== DARK BENTO — WHY VERVON ============== -->
+    <section id="why" class="relative bg-dark text-paper grain grain-light overflow-hidden py-[96px] lg:py-[128px]">
+      <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div class="grid lg:grid-cols-12 gap-10 mb-14">
+          <div class="lg:col-span-7 reveal">
+            <div class="font-mono text-[11px] tracking-[0.18em] uppercase text-paper2/70 mb-5">Why Vervon</div>
+            <h2 class="h-section text-[44px] md:text-[56px] text-paper">Six things that make Vervon <span class="italic-accent" style="color:#E89F4A">different.</span></h2>
+          </div>
+          <div class="lg:col-span-5 lg:col-start-8 lg:self-end reveal">
+            <p class="text-paper/80 text-[15px] leading-relaxed max-w-[440px] lg:ml-auto">
+              We didn't pick "digital transformation" as our category. We picked Appian. And then went deeper than anyone in our market.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal bento">
+          <article>
+            <div class="flex items-center gap-3 mb-6">
+              <!-- badge icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2l3 3 4-1-1 4 3 3-3 3 1 4-4-1-3 3-3-3-4 1 1-4-3-3 3-3-1-4 4 1z" stroke="#E89F4A" stroke-width="1.2" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="3" stroke="#E89F4A" stroke-width="1.2"/>
+              </svg>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-paper2/70">Depth</span>
+            </div>
+            <h3 class="font-serif text-[24px] text-paper leading-tight">Certified at depth</h3>
+            <p class="text-paper/70 text-[14px] leading-relaxed mt-3">
+              100% Appian-certified workforce, 35% at Level 2 (Senior Developer), 25% at Level 3 (Lead Developer) — by far the densest credentialing in our partner network band.
+            </p>
+          </article>
+          <article>
+            <div class="flex items-center gap-3 mb-6">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2l8 3v6c0 5-4 9-8 11-4-2-8-6-8-11V5l8-3z" stroke="#E89F4A" stroke-width="1.2" stroke-linejoin="round"/>
+                <path d="M9 12l2 2 4-4" stroke="#E89F4A" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-paper2/70">Compliance</span>
+            </div>
+            <h3 class="font-serif text-[24px] text-paper leading-tight">Regulated-industry fluent</h3>
+            <p class="text-paper/70 text-[14px] leading-relaxed mt-3">
+              Fluent in KYC, AML, audit trails, SOX, GDPR, RBI, and APRA frameworks — your compliance team isn't training us on your time.
+            </p>
+          </article>
+          <article>
+            <div class="flex items-center gap-3 mb-6">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 5h18l-7 9v6l-4-2v-4z" stroke="#E89F4A" stroke-width="1.2" stroke-linejoin="round"/>
+              </svg>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-paper2/70">Rigor</span>
+            </div>
+            <h3 class="font-serif text-[24px] text-paper leading-tight">Zero L1 padding</h3>
+            <p class="text-paper/70 text-[14px] leading-relaxed mt-3">
+              Every engineer ships. We don't bill juniors as seniors or pad teams to grow margin. The team you scope is the team that delivers.
+            </p>
+          </article>
+          <article>
+            <div class="flex items-center gap-3 mb-6">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" stroke="#E89F4A" stroke-width="1.2"/>
+                <path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18" stroke="#E89F4A" stroke-width="1.2"/>
+              </svg>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-paper2/70">Delivery</span>
+            </div>
+            <h3 class="font-serif text-[24px] text-paper leading-tight">Two-hub delivery</h3>
+            <p class="text-paper/70 text-[14px] leading-relaxed mt-3">
+              Sydney advisory plus Hyderabad build velocity — one team, one playbook, 24/7 cycles. Your daytime is always somebody's working hours.
+            </p>
+          </article>
+          <article>
+            <div class="flex items-center gap-3 mb-6">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-7h6v7M11 11h2" stroke="#E89F4A" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+              </svg>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-paper2/70">Architecture</span>
+            </div>
+            <h3 class="font-serif text-[24px] text-paper leading-tight">Architecture-first</h3>
+            <p class="text-paper/70 text-[14px] leading-relaxed mt-3">
+              A senior architect on every engagement from day one. We refuse projects we can't architect cleanly — no rebuilds in year two.
+            </p>
+          </article>
+          <article>
+            <div class="flex items-center gap-3 mb-6">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke="#E89F4A" stroke-width="1.2" stroke-linejoin="round"/>
+              </svg>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-paper2/70">Native</span>
+            </div>
+            <h3 class="font-serif text-[24px] text-paper leading-tight">AI / ML / RPA native</h3>
+            <p class="text-paper/70 text-[14px] leading-relaxed mt-3">
+              Process mining, intelligent decisioning, and bot orchestration designed into Appian flows from sprint zero — not bolted on after go-live.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============== INDUSTRIES (asymmetric grid) ============== -->
+    <section id="industries" class="relative py-24 lg:py-32 industries-section overflow-hidden" style="background: var(--paper);">
+      <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
+
+        <!-- Header -->
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-14 lg:mb-20">
+          <div class="lg:col-span-7">
+            <div class="reveal label-mono">02 · Industries</div>
+            <h2 class="reveal mt-5 text-[42px] lg:text-[56px] leading-[1.04] font-medium" style="color: var(--ink);">
+              Five industries. <span style="color: #D94F2C; font-weight: 600;">Deep specialization</span> in each.
+            </h2>
+          </div>
+          <div class="lg:col-span-5 flex items-end">
+            <p class="reveal text-[16px] lg:text-[17px]" style="color: var(--ink-soft); line-height: 1.6;">
+              Productized expertise in five regulated verticals. We don't dabble — we lead with reference architectures, compliance fluency, and benchmark-grade delivery.
+            </p>
+          </div>
+        </div>
+
+        <!-- Asymmetric grid: 6+6 / 4+4+4 -->
+        <div class="reveal grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6">
+
+          <!-- Banking — wide top-left -->
+          <article class="ind-card lg:col-span-6">
+            <div class="ind-visual ind-visual-banking" aria-hidden="true">
+              <svg viewBox="0 0 200 120" class="ind-art" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <linearGradient id="indBank" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#5B8FBF"/>
+                    <stop offset="1" stop-color="#3F6FA0"/>
+                  </linearGradient>
+                </defs>
+                <g stroke="url(#indBank)" stroke-width="2" stroke-linecap="round" fill="none">
+                  <line x1="40" y1="90" x2="40" y2="60"/>
+                  <line x1="62" y1="90" x2="62" y2="44"/>
+                  <line x1="84" y1="90" x2="84" y2="52"/>
+                  <line x1="106" y1="90" x2="106" y2="32"/>
+                  <line x1="128" y1="90" x2="128" y2="48"/>
+                  <line x1="150" y1="90" x2="150" y2="24"/>
+                  <line x1="172" y1="90" x2="172" y2="38"/>
+                </g>
+                <path d="M30 30 Q70 18 110 28 T190 18" stroke="#D94F2C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <circle cx="190" cy="18" r="3" fill="#D94F2C"/>
+              </svg>
+            </div>
+            <div class="ind-body">
+              <h3 class="ind-title">Banking</h3>
+              <p class="ind-desc">Secure, compliant workflows built for enterprise banking operations — origination, KYC, dispute, audit-ready end-to-end.</p>
+            </div>
+          </article>
+
+          <!-- Government — wide top-right -->
+          <article class="ind-card lg:col-span-6">
+            <div class="ind-visual ind-visual-gov" aria-hidden="true">
+              <svg viewBox="0 0 200 120" class="ind-art" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <linearGradient id="indGov" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#7A8BA8"/>
+                    <stop offset="1" stop-color="#566280"/>
+                  </linearGradient>
+                </defs>
+                <g stroke="url(#indGov)" stroke-width="1.6" fill="none" stroke-linecap="round">
+                  <path d="M40 90 L160 90"/>
+                  <path d="M30 90 L100 40 L170 90"/>
+                  <line x1="55" y1="90" x2="55" y2="60"/>
+                  <line x1="80" y1="90" x2="80" y2="60"/>
+                  <line x1="120" y1="90" x2="120" y2="60"/>
+                  <line x1="145" y1="90" x2="145" y2="60"/>
+                  <line x1="40" y1="60" x2="160" y2="60"/>
+                  <line x1="40" y1="100" x2="160" y2="100"/>
+                </g>
+                <circle cx="100" cy="32" r="3" fill="#D94F2C"/>
+              </svg>
+            </div>
+            <div class="ind-body">
+              <h3 class="ind-title">Government</h3>
+              <p class="ind-desc">Auditable case management and citizen services at scale — workflows that hold up to public scrutiny.</p>
+            </div>
+          </article>
+
+          <!-- Telecom — bottom 1/3 -->
+          <article class="ind-card lg:col-span-4">
+            <div class="ind-visual ind-visual-telecom" aria-hidden="true">
+              <svg viewBox="0 0 200 120" class="ind-art" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <linearGradient id="indTel" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#5B8FBF"/>
+                    <stop offset="1" stop-color="#3F6FA0"/>
+                  </linearGradient>
+                </defs>
+                <g stroke="url(#indTel)" stroke-width="1.6" fill="none">
+                  <path d="M100 60 m-12 0 a 12 12 0 1 0 24 0 a 12 12 0 1 0 -24 0"/>
+                  <path d="M100 60 m-26 0 a 26 26 0 1 0 52 0 a 26 26 0 1 0 -52 0"/>
+                  <path d="M100 60 m-42 0 a 42 42 0 1 0 84 0 a 42 42 0 1 0 -84 0"/>
+                </g>
+                <circle cx="100" cy="60" r="4" fill="#D94F2C"/>
+              </svg>
+            </div>
+            <div class="ind-body">
+              <h3 class="ind-title">Telecom</h3>
+              <p class="ind-desc">Order-to-activate orchestration with cleaner customer 360.</p>
+            </div>
+          </article>
+
+          <!-- Retail — bottom 1/3 -->
+          <article class="ind-card lg:col-span-4">
+            <div class="ind-visual ind-visual-retail" aria-hidden="true">
+              <svg viewBox="0 0 200 120" class="ind-art" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <linearGradient id="indRet" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#7A8BA8"/>
+                    <stop offset="1" stop-color="#566280"/>
+                  </linearGradient>
+                </defs>
+                <g stroke="url(#indRet)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M70 50 L70 38 a 14 14 0 0 1 28 0 L98 50"/>
+                  <path d="M62 50 L106 50 L112 92 L56 92 z"/>
+                </g>
+                <line x1="84" y1="66" x2="84" y2="76" stroke="#D94F2C" stroke-width="1.6" stroke-linecap="round"/>
+                <circle cx="130" cy="42" r="3" fill="#D94F2C"/>
+              </svg>
+            </div>
+            <div class="ind-body">
+              <h3 class="ind-title">Retail</h3>
+              <p class="ind-desc">Vendor onboarding, store operations, and returns automation — end-to-end.</p>
+            </div>
+          </article>
+
+          <!-- Financial Services — bottom 1/3 -->
+          <article class="ind-card lg:col-span-4">
+            <div class="ind-visual ind-visual-fs" aria-hidden="true">
+              <svg viewBox="0 0 200 120" class="ind-art" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <linearGradient id="indFs" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#5B8FBF"/>
+                    <stop offset="1" stop-color="#3F6FA0"/>
+                  </linearGradient>
+                </defs>
+                <g fill="none">
+                  <circle cx="100" cy="60" r="32" stroke="url(#indFs)" stroke-width="1.6"/>
+                  <path d="M100 60 L100 28" stroke="url(#indFs)" stroke-width="1.6"/>
+                  <path d="M100 60 L128 76" stroke="#D94F2C" stroke-width="1.8" stroke-linecap="round"/>
+                </g>
+                <circle cx="100" cy="60" r="3.5" fill="#1A1612"/>
+              </svg>
+            </div>
+            <div class="ind-body">
+              <h3 class="ind-title">Financial Services</h3>
+              <p class="ind-desc">Wealth onboarding, regulatory reporting, and claims at scale.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== SERVICES — HOW WE ENGAGE ============== -->
+    <section id="partners" class="relative py-24 lg:py-32 services-section overflow-hidden" style="background: var(--paper);">
+      <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
+
+        <!-- Header -->
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-14 lg:mb-20">
+          <div class="lg:col-span-7">
+            <div class="reveal label-mono">03 · Services</div>
+            <h2 class="reveal mt-5 text-[42px] lg:text-[56px] leading-[1.04] font-medium" style="color: var(--ink);">
+              How we <span style="color: #D94F2C; font-weight: 600;">engage.</span>
+            </h2>
+          </div>
+          <div class="lg:col-span-5 flex items-end">
+            <p class="reveal text-[16px] lg:text-[17px]" style="color: var(--ink-soft); line-height: 1.6;">
+              Five engagement tracks. Pick the shape that fits your program — or sequence them across a multi-year Appian roadmap.
+            </p>
+          </div>
+        </div>
+
+        <!-- Asymmetric grid: 7+5 / 5+7 / 12 -->
+        <div class="reveal grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6">
+
+          <!-- 01 Project Delivery (col-span-7) -->
+          <article class="svc-card lg:col-span-6">
+            <div class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 21V4a1 1 0 0 1 1-1h11l-2 4 2 4H6"/>
+                <path d="M5 21v-7"/>
+              </svg>
+            </div>
+            <div class="svc-num">01</div>
+            <h3 class="svc-title">Project Delivery</h3>
+            <p class="svc-desc">Enterprise Appian delivery from discovery to deployment. Agile sprints, full architecture, go-live ownership.</p>
+            <a href="#cta" class="svc-link">Engage <span aria-hidden="true">→</span></a>
+          </article>
+
+          <!-- 02 Consulting (col-span-6 — wide top-right) -->
+          <article class="svc-card lg:col-span-6">
+            <div class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M16 8l-3.5 7.5L5 19l3.5-7.5L16 8z"/>
+              </svg>
+            </div>
+            <div class="svc-num">02</div>
+            <h3 class="svc-title">Consulting Services</h3>
+            <p class="svc-desc">Architecture, roadmap, and Center of Excellence setup for in-house Appian practice.</p>
+            <a href="#cta" class="svc-link">Engage <span aria-hidden="true">→</span></a>
+          </article>
+
+          <!-- 03 Managed Services (col-span-5) -->
+          <article class="svc-card lg:col-span-4">
+            <div class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 2"/>
+              </svg>
+            </div>
+            <div class="svc-num">03</div>
+            <h3 class="svc-title">Managed Services</h3>
+            <p class="svc-desc">24/7 support, monitoring, and platform health. Your Appian estate stays healthy long after launch.</p>
+            <a href="#cta" class="svc-link">Engage <span aria-hidden="true">→</span></a>
+          </article>
+
+          <!-- 04 Test Automation (col-span-4) -->
+          <article class="svc-card lg:col-span-4">
+            <div class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="4" width="16" height="16" rx="3"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <div class="svc-num">04</div>
+            <h3 class="svc-title">Test Automation</h3>
+            <p class="svc-desc">Appian-native and integration test coverage. Releases that don't break what's already in production.</p>
+            <a href="#cta" class="svc-link">Engage <span aria-hidden="true">→</span></a>
+          </article>
+
+          <!-- 05 Staff Augmentation (col-span-12 — full-width finale) -->
+          <article class="svc-card lg:col-span-4">
+            <div class="svc-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="8" r="3"/>
+                <circle cx="17" cy="9" r="2.5"/>
+                <path d="M3 20c0-3 2.5-5 6-5s6 2 6 5"/>
+                <path d="M14 20c0-2.4 1.5-4 3-4s3 1.5 3 3.5"/>
+              </svg>
+            </div>
+            <div class="svc-num">05</div>
+            <h3 class="svc-title">Staff Augmentation</h3>
+            <p class="svc-desc">Certified L2/L3 developers embedded in your team. Scale up or down as your roadmap shifts.</p>
+            <a href="#cta" class="svc-link">Engage <span aria-hidden="true">→</span></a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    <!-- ============== MEASURED OUTCOMES (DARK) ============== -->
+    <section id="outcomes" class="relative bg-dark text-paper grain grain-light overflow-hidden py-24 lg:py-32 outcomes-section">
+      <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
+
+        <!-- Header -->
+        <div class="reveal text-center max-w-[760px] mx-auto">
+          <div class="font-mono text-[11px] tracking-[0.18em] uppercase" style="color: rgba(250,246,239,0.55);">Outcomes</div>
+          <h2 class="mt-5 text-[40px] lg:text-[56px] leading-[1.04] font-medium" style="color: var(--paper);">
+            <span style="color: #D94F2C; font-weight: 600;">Measured</span> Outcomes.
+          </h2>
+          <p class="mt-5 text-[16px] lg:text-[17px]" style="color: rgba(250,246,239,0.7); line-height: 1.6;">
+            Quantified results from real client engagements — not vanity metrics, not industry averages.
+          </p>
+        </div>
+
+        <!-- Outcome cards -->
+        <div class="reveal mt-14 lg:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+
+          <article class="outcome-card">
+            <div class="outcome-label">Cycle time</div>
+            <div class="outcome-num"><span class="stat-num" data-counter="85">0</span><span class="outcome-unit">%</span></div>
+            <p class="outcome-desc">Reduction in manual cycle time across deployed workflows.</p>
+          </article>
+
+          <article class="outcome-card">
+            <div class="outcome-label">Velocity</div>
+            <div class="outcome-num"><span class="stat-num" data-counter="10">0</span><span class="outcome-unit">×</span></div>
+            <p class="outcome-desc">Faster delivery against legacy SI baselines.</p>
+          </article>
+
+          <article class="outcome-card">
+            <div class="outcome-label">Programs</div>
+            <div class="outcome-num"><span class="stat-num" data-counter="40">0</span><span class="outcome-unit">+</span></div>
+            <p class="outcome-desc">Production Appian programs delivered across APAC enterprises.</p>
+          </article>
+
+          <article class="outcome-card">
+            <div class="outcome-label">On-time</div>
+            <div class="outcome-num"><span class="stat-num" data-counter="100">0</span><span class="outcome-unit">%</span></div>
+            <p class="outcome-desc">On-time milestone delivery, last 24 months.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== ISO 27001 CERTIFICATION ============== -->
+    <section id="iso" class="py-20 lg:py-28" style="background: var(--paper);">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div class="reveal iso-card grid lg:grid-cols-12 gap-10 lg:gap-12 items-center rounded-[28px] p-8 sm:p-10 lg:p-14"
+             style="background: #F7F8FA; border: 1px solid #EAECEF;">
+
+          <!-- Left: content -->
+          <div class="lg:col-span-7">
+            <div class="label-mono">Information security</div>
+
+            <h2 class="mt-5 text-[36px] lg:text-[48px] leading-[1.05] font-medium" style="color: var(--ink);">
+              ISO 27001:2022 <span style="color: #D94F2C; font-weight: 600;">Certified.</span>
+            </h2>
+
+            <h3 class="mt-7 text-[18px] lg:text-[20px] font-semibold" style="color: var(--ink);">
+              What this means for you
+            </h3>
+            <p class="mt-3 text-[15px] lg:text-[16px] max-w-[600px]" style="color: var(--ink-soft); line-height: 1.65;">
+              Our information security management system is independently audited against the global standard. Your data, your processes, and your platform health are governed by controls verified end-to-end — not assumed.
+            </p>
+
+            <ul class="mt-7 lg:mt-8 flex flex-col gap-3.5">
+              <li class="flex items-start gap-3.5">
+                <span class="iso-check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M2.5 6.2 L4.8 8.5 L9.5 3.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="text-[14.5px] lg:text-[15px]" style="color: var(--ink); line-height: 1.55;">
+                  Your data and our delivery operations are governed by an externally audited information security management system.
+                </span>
+              </li>
+              <li class="flex items-start gap-3.5">
+                <span class="iso-check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M2.5 6.2 L4.8 8.5 L9.5 3.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="text-[14.5px] lg:text-[15px]" style="color: var(--ink); line-height: 1.55;">
+                  Continuous risk monitoring and remediation across all client engagements — not a one-time certification, but an active operating standard.
+                </span>
+              </li>
+              <li class="flex items-start gap-3.5">
+                <span class="iso-check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M2.5 6.2 L4.8 8.5 L9.5 3.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="text-[14.5px] lg:text-[15px]" style="color: var(--ink); line-height: 1.55;">
+                  Documented controls for access management, data handling, incident response, and supplier risk.
+                </span>
+              </li>
+              <li class="flex items-start gap-3.5">
+                <span class="iso-check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M2.5 6.2 L4.8 8.5 L9.5 3.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="text-[14.5px] lg:text-[15px]" style="color: var(--ink); line-height: 1.55;">
+                  Audit-ready evidence available on request — for procurement, security reviews, and enterprise compliance teams.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right: ISO badge -->
+          <div class="lg:col-span-5 flex items-center justify-center">
+            <div class="iso-badge-wrap relative">
+              <img
+                src="assets/iso-27001.png"
+                alt="ISO 27001 — Information Security Management — Certified"
+                class="w-[240px] sm:w-[280px] lg:w-[320px] h-auto"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== GLOBAL PRESENCE ============== -->
+    <section id="presence" class="py-24 lg:py-32" style="background: var(--paper);">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+
+        <!-- Header (asymmetric, matches Capabilities pattern) -->
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-14 lg:mb-20">
+          <div class="lg:col-span-5">
+            <div class="reveal label-mono">04 · Presence</div>
+            <h2 class="reveal mt-5 text-[40px] lg:text-[56px] leading-[1.04] font-medium" style="color: var(--ink);">
+              Two hubs.<br/>
+              <span style="color: #D94F2C; font-weight: 600;">One delivery model.</span>
+            </h2>
+          </div>
+          <div class="lg:col-span-6 lg:col-start-7 flex items-end">
+            <p class="reveal text-[16px] lg:text-[17px]" style="color: var(--ink-soft); line-height: 1.6;">
+              Sydney owns advisory and customer proximity. Hyderabad owns build velocity and 24/7 platform health. One playbook across both.
+            </p>
+          </div>
+        </div>
+
+        <!-- Body: addresses LEFT, map RIGHT -->
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+
+          <!-- Left: address cards stacked -->
+          <div class="reveal lg:col-span-5 flex flex-col gap-5">
+
+            <div class="rounded-2xl p-7 lg:p-8" style="background: #F7F8FA; border: 1px solid #EAECEF;">
+              <div class="flex items-center gap-2.5">
+                <span class="text-[12px] font-semibold" style="color: #D94F2C;">01</span>
+                <span class="text-[12px] font-medium uppercase" style="color: #D94F2C; letter-spacing: 0.12em;">Sydney · AU</span>
+              </div>
+              <p class="mt-5 text-[15px] lg:text-[16px]" style="color: var(--ink); line-height: 1.55;">
+                Level 45, 680 George St,<br/>
+                NSW 2000, Australia
+              </p>
+              <p class="mt-4 text-[14px] font-medium" style="color: var(--ink-soft);">+61 (0) 421 531 111</p>
+            </div>
+
+            <div class="rounded-2xl p-7 lg:p-8" style="background: #F7F8FA; border: 1px solid #EAECEF;">
+              <div class="flex items-center gap-2.5">
+                <span class="text-[12px] font-semibold" style="color: #D94F2C;">02</span>
+                <span class="text-[12px] font-medium uppercase" style="color: #D94F2C; letter-spacing: 0.12em;">Hyderabad · IN</span>
+              </div>
+              <p class="mt-5 text-[15px] lg:text-[16px]" style="color: var(--ink); line-height: 1.55;">
+                WeWork, Rajapushpa Summit,<br/>
+                Nanakramguda, Financial District,<br/>
+                Telangana 500032, India
+              </p>
+              <p class="mt-4 text-[14px] font-medium" style="color: var(--ink-soft);">+91 (0) 91676 31111</p>
+            </div>
+
+          </div>
+
+          <!-- Right: dotted world map with pins -->
+          <div class="reveal lg:col-span-7 relative">
+            <img
+              src="assets/world-map-dotted.svg"
+              alt="Vervon hubs across the globe"
+              class="w-full h-auto select-none pointer-events-none"
+            />
+
+            <!-- Pin 01: Sydney -->
+            <div class="absolute flex flex-col items-center"
+                 style="top: 72%; left: 84%; transform: translate(-50%, -50%);">
+              <span class="text-[12px] font-semibold mb-2" style="color: #D94F2C;">01</span>
+              <span class="relative inline-flex items-center justify-center">
+                <span class="absolute w-7 h-7 rounded-full border-[1.5px]" style="border-color: rgba(217, 79, 44, 0.35);"></span>
+                <span class="relative w-[10px] h-[10px] rounded-full" style="background: #D94F2C;"></span>
+              </span>
+            </div>
+
+            <!-- Pin 02: Hyderabad -->
+            <div class="absolute flex flex-col items-center"
+                 style="top: 42%; left: 67%; transform: translate(-50%, -50%);">
+              <span class="text-[12px] font-semibold mb-2" style="color: #D94F2C;">02</span>
+              <span class="relative inline-flex items-center justify-center">
+                <span class="absolute w-7 h-7 rounded-full border-[1.5px]" style="border-color: rgba(217, 79, 44, 0.35);"></span>
+                <span class="relative w-[10px] h-[10px] rounded-full" style="background: #D94F2C;"></span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== TESTIMONIAL SHOWCASE ============== -->
+    <section class="py-24 lg:py-32" style="background: var(--paper);">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+
+        <!-- Header (matches Capabilities pattern) -->
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-14 lg:mb-20">
+          <div class="lg:col-span-7">
+            <div class="reveal label-mono">Customer voice</div>
+            <h2 class="reveal mt-5 text-[40px] lg:text-[56px] leading-[1.04] font-medium" style="color: var(--ink);">
+              Trusted by teams who'd rather <span style="color: #D94F2C; font-weight: 600;">ship than rebuild.</span>
+            </h2>
+          </div>
+          <div class="lg:col-span-5 flex items-end">
+            <p class="reveal text-[16px] lg:text-[17px]" style="color: var(--ink-soft); line-height: 1.6;">
+              Quote-led validation from clients who've measured the difference.
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial card -->
+        <article class="reveal testi-card group flex flex-col lg:flex-row gap-8 lg:gap-12 p-6 sm:p-8 lg:p-10 rounded-[28px]"
+                 style="background: #F7F8FA; border: 1px solid #EAECEF;">
+
+          <!-- LEFT: portrait (height-constrained, vertically centered) -->
+          <div class="lg:w-[34%] lg:max-w-[380px] flex-shrink-0 flex items-center">
+            <div class="relative w-full overflow-hidden rounded-[20px] aspect-[4/5] lg:aspect-[5/6]">
+              <img
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80"
+                alt="Customer portrait — placeholder"
+                class="testi-img w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- RIGHT: content (full available width) -->
+          <div class="lg:flex-1 flex flex-col justify-between min-w-0 gap-8 lg:gap-10">
+
+            <div>
+              <svg width="32" height="24" viewBox="0 0 32 24" fill="none" aria-hidden="true" class="mb-6">
+                <path d="M0 24V14C0 6 4 0 12 0V4C7 4 5 8 5 12H12V24H0Z M20 24V14C20 6 24 0 32 0V4C27 4 25 8 25 12H32V24H20Z" fill="#D94F2C" opacity="0.85"/>
+              </svg>
+
+              <blockquote class="text-[18px] sm:text-[20px] lg:text-[22px] leading-[1.55] font-medium max-w-[680px]" style="color: var(--ink);">
+                We needed an Appian partner who could stand up an architecture, not just take tickets. Vervon's leads showed up with opinions on our process model, integrations, and governance — and were right enough often enough that we cut a year off our roadmap.
+              </blockquote>
+            </div>
+
+            <!-- Bottom row: author LEFT + metric RIGHT, baseline-aligned -->
+            <div class="flex flex-col sm:flex-row sm:items-end gap-8 sm:gap-10 pt-8 border-t" style="border-color: #EAECEF;">
+
+              <!-- Author -->
+              <div class="flex items-center gap-4 flex-1 min-w-0">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center text-[15px] font-semibold flex-shrink-0"
+                     style="background: linear-gradient(135deg,#F5C9A8,#E8B5B5); color: var(--ink);">
+                  CN
+                </div>
+                <div class="leading-tight min-w-0">
+                  <div class="text-[15px] font-semibold truncate" style="color: var(--ink);">[ Customer name ]</div>
+                  <div class="text-[12.5px] font-medium mt-1" style="color: var(--mid);">[ Title · Company ]</div>
+                </div>
+              </div>
+
+              <!-- Metric -->
+              <div class="sm:pl-10 sm:border-l flex-shrink-0" style="border-color: #EAECEF;">
+                <div class="flex items-baseline gap-4">
+                  <div class="text-[56px] sm:text-[64px] lg:text-[72px] font-semibold leading-none tracking-tight" style="color: var(--ink);">
+                    3.5<span style="color: #D94F2C;">×</span>
+                  </div>
+                  <div class="text-[12.5px] font-medium uppercase whitespace-nowrap" style="color: var(--mid); letter-spacing: 0.14em;">
+                    Faster delivery
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </article>
+
+        <!-- Carousel nav: dots LEFT, arrows RIGHT -->
+        <div class="mt-8 lg:mt-10 flex items-center justify-between gap-6">
+
+          <!-- Dots -->
+          <div class="flex items-center gap-2.5" role="tablist" aria-label="Testimonial pagination">
+            <button class="testi-dot is-active" aria-label="Testimonial 1" aria-selected="true"></button>
+            <button class="testi-dot" aria-label="Testimonial 2"></button>
+            <button class="testi-dot" aria-label="Testimonial 3"></button>
+            <button class="testi-dot" aria-label="Testimonial 4"></button>
+          </div>
+
+          <!-- Arrows -->
+          <div class="flex items-center gap-3">
+            <button class="testi-arrow" aria-label="Previous testimonial">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button class="testi-arrow" aria-label="Next testimonial">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============== FAQ ============== -->
+    <section id="faq" class="py-24 lg:py-32" style="background: var(--paper);">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+
+        <!-- Header (matches Capabilities pattern) -->
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-14 lg:mb-20">
+          <div class="lg:col-span-7">
+            <div class="reveal label-mono">Frequently asked</div>
+            <h2 class="reveal mt-5 text-[40px] lg:text-[56px] leading-[1.04] font-medium" style="color: var(--ink);">
+              The questions enterprise <span style="color: #D94F2C; font-weight: 600;">buyers ask first.</span>
+            </h2>
+          </div>
+          <div class="lg:col-span-5 flex items-end">
+            <p class="reveal text-[16px] lg:text-[17px]" style="color: var(--ink-soft); line-height: 1.6;">
+              Direct answers from procurement, architecture, and security conversations we've had over the past 24 months.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ list -->
+        <div class="reveal max-w-[920px] mx-auto flex flex-col gap-4 lg:gap-5" id="faqList">
+
+          <details class="faq-item rounded-[20px] lg:rounded-[24px]" style="background: #F7F8FA; border: 1px solid #EAECEF;">
+            <summary class="faq-summary">
+              <span class="faq-q">What does it cost to engage Vervon for an Appian build?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <span class="faq-icon-h"></span>
+                <span class="faq-icon-v"></span>
+              </span>
+            </summary>
+            <div class="faq-content"><div class="faq-body">
+              <p>Engagements typically start at AU$80K for a discovery and architecture sprint, with full builds priced against scope. We don't quote until we've understood your roadmap, regulatory context, and target SLAs — generic SI rate cards don't apply on Appian work.</p>
+            </div></div>
+          </details>
+
+          <details class="faq-item rounded-[20px] lg:rounded-[24px]" style="background: #F7F8FA; border: 1px solid #EAECEF;">
+            <summary class="faq-summary">
+              <span class="faq-q">How quickly can your engineers ramp on our platform?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <span class="faq-icon-h"></span>
+                <span class="faq-icon-v"></span>
+              </span>
+            </summary>
+            <div class="faq-content"><div class="faq-body">
+              <p>A certified Appian engineer (L2 or L3) is productive on your codebase within 5 working days, assuming standard onboarding (access, environment, walkthrough). Our certification depth is the reason this is fast — not the reason it's slow.</p>
+            </div></div>
+          </details>
+
+          <details class="faq-item rounded-[20px] lg:rounded-[24px]" style="background: #F7F8FA; border: 1px solid #EAECEF;">
+            <summary class="faq-summary">
+              <span class="faq-q">Are your engineers Vervon-employed or sub-contracted?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <span class="faq-icon-h"></span>
+                <span class="faq-icon-v"></span>
+              </span>
+            </summary>
+            <div class="faq-content"><div class="faq-body">
+              <p>All Vervon-employed. We don't sub-contract delivery. Your engagement contracts directly with Vervon Pty Ltd (Australia) or Vervon Technologies Pvt Ltd (India), depending on hub.</p>
+            </div></div>
+          </details>
+
+          <details class="faq-item rounded-[20px] lg:rounded-[24px]" style="background: #F7F8FA; border: 1px solid #EAECEF;">
+            <summary class="faq-summary">
+              <span class="faq-q">Do you support our compliance and security requirements?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <span class="faq-icon-h"></span>
+                <span class="faq-icon-v"></span>
+              </span>
+            </summary>
+            <div class="faq-content"><div class="faq-body">
+              <p>Yes. We're ISO 27001:2022 certified, and our engineers are fluent in regulated-industry frameworks (APRA, RBI, GDPR, SOX). Compliance evidence and security documentation are available on request for procurement and audit teams.</p>
+            </div></div>
+          </details>
+
+          <details class="faq-item rounded-[20px] lg:rounded-[24px]" style="background: #F7F8FA; border: 1px solid #EAECEF;">
+            <summary class="faq-summary">
+              <span class="faq-q">What happens after the build goes live?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <span class="faq-icon-h"></span>
+                <span class="faq-icon-v"></span>
+              </span>
+            </summary>
+            <div class="faq-content"><div class="faq-body">
+              <p>Managed Services takes over — 24/7 support across both hubs, enhancement queues, platform health monitoring, and quarterly architecture reviews. You don't get handed a manual and abandoned.</p>
+            </div></div>
+          </details>
+
+          <details class="faq-item rounded-[20px] lg:rounded-[24px]" style="background: #F7F8FA; border: 1px solid #EAECEF;">
+            <summary class="faq-summary">
+              <span class="faq-q">Can you embed engineers in our team instead of running an isolated project?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <span class="faq-icon-h"></span>
+                <span class="faq-icon-v"></span>
+              </span>
+            </summary>
+            <div class="faq-content"><div class="faq-body">
+              <p>Yes — that's our Staff Augmentation track. Certified Appian developers embedded in your team, billed monthly, scaling up or down as your roadmap shifts.</p>
+            </div></div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============== CTA STRIP ============== -->
+    <section id="cta" class="px-6 lg:px-10 py-20 lg:py-28" style="background: var(--paper);">
+      <div class="max-w-[1280px] mx-auto">
+        <div class="reveal relative overflow-hidden rounded-3xl px-8 py-16 lg:px-20 lg:py-24 cta-gradient">
+          <div class="grain-overlay" aria-hidden="true"></div>
+
+          <div class="relative max-w-[860px] mx-auto text-center">
+            <h2 class="font-medium leading-[1.08] tracking-tight">
+              <span class="block text-[28px] sm:text-[36px] lg:text-[44px] lg:whitespace-nowrap" style="color: var(--ink);">
+                Ready to scale your Appian initiative?
+              </span>
+              <span class="block mt-2 lg:mt-3 text-[30px] sm:text-[40px] lg:text-[48px] lg:whitespace-nowrap" style="color: #D94F2C; font-weight: 600;">
+                Let's build it right.
+              </span>
+            </h2>
+
+            <p class="mt-5 lg:mt-6 max-w-[580px] mx-auto text-[15px] lg:text-[17px]"
+               style="color: var(--ink-soft); line-height: 1.55;">
+              Talk with our team about enterprise automation, AI workflows, and scalable Appian delivery.
+            </p>
+
+            <form class="mt-8 lg:mt-10 flex flex-row gap-2.5 sm:gap-3 max-w-[560px] mx-auto"
+                  onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('.ok').classList.remove('hidden');">
+              <input
+                type="email"
+                required
+                placeholder="you@company.com"
+                aria-label="Your work email"
+                class="flex-1 min-w-0 px-5 sm:px-6 py-[14px] rounded-full text-[15px] border-0 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
+                style="background: rgba(255,255,255,0.92); color: var(--ink);" />
+              <button
+                type="submit"
+                class="btn-primary inline-flex items-center justify-center gap-2 px-5 sm:px-7 py-[14px] rounded-full text-[13px] sm:text-[14px] font-medium whitespace-nowrap">
+                Book a demo
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </form>
+
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] font-medium uppercase"
+                 style="color: var(--mid); letter-spacing: 0.12em;">
+              <span style="color: var(--mid-2);">Or email</span>
+              <a href="mailto:info@vervontechnologies.com" style="color: var(--ink);" class="hover:text-accent transition-colors">info@vervontechnologies.com</a>
+            </div>
+            <div class="ok hidden mt-4 text-[11px] tracking-[0.14em] uppercase font-medium" style="color: var(--accent); letter-spacing: 0.12em;">✓ Thanks — we'll be in touch within one business day.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FOOTER ============== -->
+    <footer id="careers" class="border-t border-hair bg-paper">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16">
+        <div class="grid lg:grid-cols-12 gap-10">
+          <div class="lg:col-span-5">
+            <div class="font-serif text-[28px] font-medium leading-none">Vervon<span class="font-mono text-[10px] tracking-[0.2em] uppercase text-mid ml-1.5 align-middle">tech</span></div>
+            <p class="mt-4 text-[14px] text-inksoft max-w-[360px] leading-relaxed">
+              Appian Trusted &amp; Advantage Partner.<br/>Hyderabad &amp; Sydney · Founded 2021.
+            </p>
+            <a href="#" aria-label="LinkedIn" class="mt-6 inline-flex items-center justify-center w-9 h-9 border border-hair rounded-full hover:border-accent hover:text-accent transition-colors">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v15H.22V8zM8 8h4.36v2.05h.06c.61-1.16 2.1-2.38 4.32-2.38C21.4 7.67 22 10.4 22 13.78V23h-4.56v-8.18c0-1.95-.04-4.46-2.72-4.46s-3.14 2.13-3.14 4.32V23H8V8z"/></svg>
+            </a>
+          </div>
+
+          <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-8 text-[13.5px]">
+            <div>
+              <div class="font-mono text-[10.5px] tracking-[0.16em] uppercase text-mid mb-4">Explore</div>
+              <ul class="space-y-2.5 text-inksoft">
+                <li><a href="#why" class="hover:text-accent transition-colors">Why Vervon</a></li>
+                <li><a href="#careers" class="hover:text-accent transition-colors">Careers</a></li>
+                <li><a href="#cta" class="hover:text-accent transition-colors">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[10.5px] tracking-[0.16em] uppercase text-mid mb-4">Industries</div>
+              <ul class="space-y-2.5 text-inksoft">
+                <li><a href="#industries" class="hover:text-accent transition-colors">Banking</a></li>
+                <li><a href="#industries" class="hover:text-accent transition-colors">Financial Services</a></li>
+                <li><a href="#industries" class="hover:text-accent transition-colors">Telecom</a></li>
+                <li><a href="#industries" class="hover:text-accent transition-colors">Retail</a></li>
+                <li><a href="#industries" class="hover:text-accent transition-colors">Government</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[10.5px] tracking-[0.16em] uppercase text-mid mb-4">Services</div>
+              <ul class="space-y-2.5 text-inksoft">
+                <li><a href="#services" class="hover:text-accent transition-colors">Project Delivery</a></li>
+                <li><a href="#services" class="hover:text-accent transition-colors">Consulting</a></li>
+                <li><a href="#services" class="hover:text-accent transition-colors">Managed Services</a></li>
+                <li><a href="#services" class="hover:text-accent transition-colors">Test Automation</a></li>
+                <li><a href="#services" class="hover:text-accent transition-colors">Staff Aug.</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[10.5px] tracking-[0.16em] uppercase text-mid mb-4">Partners</div>
+              <ul class="space-y-2.5 text-inksoft">
+                <li><a href="#partners" class="hover:text-accent transition-colors">Appian</a></li>
+                <li><a href="#cta" class="hover:text-accent transition-colors">Become a partner</a></li>
+                <li><a href="#partners" class="hover:text-accent transition-colors">Alliances</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-14 pt-6 border-t border-hair flex flex-col md:flex-row gap-3 md:items-center justify-between font-mono text-[11px] tracking-[0.12em] uppercase text-mid">
+          <div>© 2026 Vervon Technologies Pty Ltd — All Rights Reserved</div>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-accent transition-colors">Privacy</a>
+            <a href="#" class="hover:text-accent transition-colors">Terms</a>
+            <a href="#" class="hover:text-accent transition-colors">Security</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // ====== Sticky nav glassy on scroll ======
+    (function () {
+      const nav = document.getElementById('nav');
+      const update = () => {
+        if (window.scrollY > 12) nav.classList.add('nav-glass');
+        else nav.classList.remove('nav-glass');
+      };
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+    })();
+
+    // ====== Mobile drawer ======
+    (function () {
+      const toggle = document.getElementById('menuToggle');
+      const close = document.getElementById('menuClose');
+      const drawer = document.getElementById('mobileDrawer');
+      const open = (v) => {
+        drawer.classList.toggle('open', v);
+        toggle.setAttribute('aria-expanded', String(v));
+        document.body.style.overflow = v ? 'hidden' : '';
+      };
+      toggle.addEventListener('click', () => open(true));
+      close.addEventListener('click', () => open(false));
+      drawer.querySelectorAll('[data-close]').forEach(a => a.addEventListener('click', () => open(false)));
+    })();
+
+    // ====== Reveal on scroll (staggered 80ms within each section) ======
+    (function () {
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced) {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+        return;
+      }
+      const observed = new WeakSet();
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !observed.has(entry.target)) {
+            observed.add(entry.target);
+            const siblings = Array.from(entry.target.parentElement?.querySelectorAll(':scope > .reveal') || []);
+            const idx = Math.max(0, siblings.indexOf(entry.target));
+            setTimeout(() => entry.target.classList.add('in'), idx * 80);
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    })();
+
+    // ====== Number counters ======
+    (function () {
+      const ease = (t) => 1 - Math.pow(1 - t, 3);
+      const targetOf = (el) => parseFloat(el.dataset.counter ?? el.dataset.target);
+      const suffixOf = (el) => el.dataset.suffix ?? '';
+      const animate = (el) => {
+        const target = targetOf(el);
+        const suffix = suffixOf(el);
+        const dur = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const t = Math.min(1, (now - start) / dur);
+          const v = target * ease(t);
+          el.textContent = Math.round(v).toString() + suffix;
+          if (t < 1) requestAnimationFrame(tick);
+          else el.textContent = target.toString() + suffix;
+        };
+        requestAnimationFrame(tick);
+      };
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const counters = document.querySelectorAll('.counter, .stat-num');
+      if (reduced) {
+        counters.forEach(el => el.textContent = targetOf(el).toString() + suffixOf(el));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            animate(e.target);
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(el => io.observe(el));
+    })();
+
+    // ====== FAQ accordion (only one open at a time) ======
+    (function () {
+      const list = document.getElementById('faqList');
+      if (!list) return;
+      const items = list.querySelectorAll('details.faq-item');
+      items.forEach((d) => {
+        d.addEventListener('toggle', () => {
+          if (d.open) {
+            items.forEach((other) => {
+              if (other !== d) other.open = false;
+            });
+          }
+        });
+      });
+    })();
+
+    // ====== Industry tabs ======
+    (function () {
+      const tabs = document.querySelectorAll('[role="tab"]');
+      const panels = document.querySelectorAll('[role="tabpanel"]');
+      const activate = (key) => {
+        tabs.forEach(t => t.setAttribute('aria-selected', String(t.dataset.tab === key)));
+        panels.forEach(p => p.classList.toggle('hidden', p.id !== 'tab-' + key));
+      };
+      tabs.forEach((t) => {
+        t.addEventListener('click', () => activate(t.dataset.tab));
+        t.addEventListener('keydown', (e) => {
+          const arr = Array.from(tabs);
+          const i = arr.indexOf(t);
+          if (e.key === 'ArrowRight') { e.preventDefault(); arr[(i + 1) % arr.length].focus(); arr[(i + 1) % arr.length].click(); }
+          if (e.key === 'ArrowLeft')  { e.preventDefault(); arr[(i - 1 + arr.length) % arr.length].focus(); arr[(i - 1 + arr.length) % arr.length].click(); }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

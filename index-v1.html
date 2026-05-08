@@ -1,0 +1,1562 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Vervon Technologies — Appian Trusted &amp; Advantage Partner</title>
+  <meta name="description" content="Enterprise-grade Appian delivery for regulated industries. Banking, financial services, telecom, retail, and government — backed by one of the most certified low-code practices in APAC." />
+  <meta name="theme-color" content="#FAF6EF" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts: Lexend (single family) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300..700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#FAF6EF',
+            paper2: '#F4ECDF',
+            ink: '#1A1612',
+            inksoft: '#2A241D',
+            mid: '#6B6862',
+            hair: '#E5DCCB',
+            accent: '#D94F2C',
+            accentsoft: '#E89F4A',
+            dark: '#15120E',
+            darkhair: '#2D2820',
+          },
+          fontFamily: {
+            serif: ['Lexend', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            sans: ['Lexend', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            mono: ['Lexend', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root {
+      --paper: #FAF6EF;
+      --paper-2: #F4ECDF;
+      --ink: #1A1612;
+      --ink-soft: #2A241D;
+      --mid: #6B6862;
+      --hair: #E5DCCB;
+      --accent: #D94F2C;
+      --accent-soft: #E89F4A;
+      --dark: #15120E;
+      --dark-hair: #2D2820;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .font-serif, .font-display {
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+    }
+    .font-mono {
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    /* Focus ring for accessibility */
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+
+    /* Grain overlay (inline SVG noise) */
+    .grain::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      opacity: 0.20;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.10  0 0 0 0 0.08  0 0 0 0 0.06  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      background-size: 240px 240px;
+    }
+    .grain-light::before {
+      mix-blend-mode: overlay;
+      opacity: 0.08;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    }
+
+    /* Hero gradient stack */
+    .hero-gradient {
+      background:
+        radial-gradient(60% 50% at 85% 18%, rgba(245,201,168,0.60) 0%, rgba(245,201,168,0) 65%),
+        radial-gradient(55% 55% at 12% 45%, rgba(232,181,181,0.45) 0%, rgba(232,181,181,0) 70%),
+        radial-gradient(70% 60% at 50% 100%, rgba(212,196,216,0.40) 0%, rgba(212,196,216,0) 70%),
+        radial-gradient(45% 45% at 95% 70%, rgba(240,188,133,0.38) 0%, rgba(240,188,133,0) 70%),
+        var(--paper);
+    }
+
+    /* CTA strip soft gradient */
+    .cta-gradient {
+      background:
+        radial-gradient(50% 80% at 80% 50%, rgba(240,188,133,0.45), rgba(240,188,133,0) 70%),
+        radial-gradient(60% 80% at 15% 50%, rgba(232,181,181,0.45), rgba(232,181,181,0) 70%),
+        var(--paper);
+    }
+
+    /* Pills */
+    .pill { border-radius: 999px; }
+
+    .btn-black {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform .25s ease, background .2s ease;
+    }
+    .btn-black:hover { transform: translateY(-1px); background: #000; }
+    .btn-black .arrow { transition: transform .25s ease; }
+    .btn-black:hover .arrow { transform: translateX(3px); }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--ink);
+      padding: 13px 21px;
+      border-radius: 999px;
+      border: 1px solid rgba(26,22,18,0.18);
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background .2s ease;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.8); }
+
+    /* Hairline cards */
+    .card-hair {
+      border: 1px solid var(--hair);
+      background: rgba(255,255,255,0.55);
+      transition: transform .35s ease, box-shadow .35s ease, border-color .25s ease;
+    }
+    .card-hair:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px -28px rgba(26,22,18,0.25);
+      border-color: #D8CDB8;
+    }
+
+    /* Mono labels */
+    .mono-label {
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .italic-accent {
+      font-style: normal;
+      color: var(--accent);
+      font-weight: 600;
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+    }
+
+    /* Pulsing dot */
+    @keyframes pulseDot {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(217,79,44,0.55); }
+      50% { box-shadow: 0 0 0 6px rgba(217,79,44,0); }
+    }
+    .dot-pulse {
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--accent);
+      animation: pulseDot 1.8s ease-in-out infinite;
+    }
+
+    /* Workflow dashed flow */
+    @keyframes dash-flow {
+      to { stroke-dashoffset: -36; }
+    }
+    .flow-dash {
+      stroke: var(--accent);
+      stroke-width: 1.4;
+      fill: none;
+      stroke-dasharray: 6 6;
+      animation: dash-flow 1.6s linear infinite;
+    }
+    .flow-base {
+      stroke: #B8AE9C;
+      stroke-width: 1.3;
+      fill: none;
+    }
+
+    .dot-grid {
+      background-image: radial-gradient(rgba(26,22,18,0.18) 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+
+    /* Reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(8px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Sticky nav glassy state */
+    .nav-glass {
+      background: rgba(250,246,239,0.72);
+      backdrop-filter: saturate(140%) blur(16px);
+      -webkit-backdrop-filter: saturate(140%) blur(16px);
+      border-bottom: 1px solid var(--hair);
+    }
+
+    /* Bento: shared borders, no gaps */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--dark-hair);
+      border-left: 1px solid var(--dark-hair);
+    }
+    .bento > article {
+      border-right: 1px solid var(--dark-hair);
+      border-bottom: 1px solid var(--dark-hair);
+      padding: 40px 32px 36px;
+      min-height: 280px;
+    }
+    @media (max-width: 900px) {
+      .bento { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 600px) {
+      .bento { grid-template-columns: 1fr; }
+    }
+
+    /* Capabilities 3-col shared border */
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      border-top: 1px solid var(--hair);
+      border-left: 1px solid var(--hair);
+    }
+    .cap-grid > article {
+      border-right: 1px solid var(--hair);
+      border-bottom: 1px solid var(--hair);
+      padding: 40px 32px;
+      background: rgba(255,255,255,0.4);
+    }
+    @media (max-width: 900px) {
+      .cap-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      border: 1px solid var(--hair);
+      background: rgba(255,255,255,0.45);
+    }
+    .stats-bar > div {
+      padding: 28px 28px 30px;
+      border-right: 1px solid var(--hair);
+    }
+    .stats-bar > div:last-child { border-right: 0; }
+    @media (max-width: 900px) {
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .stats-bar > div { border-bottom: 1px solid var(--hair); }
+    }
+    @media (max-width: 520px) {
+      .stats-bar { grid-template-columns: 1fr; }
+    }
+
+    /* Service cards */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      border-top: 1px solid var(--hair);
+      border-left: 1px solid var(--hair);
+    }
+    .svc-grid > article {
+      border-right: 1px solid var(--hair);
+      border-bottom: 1px solid var(--hair);
+      padding: 32px 24px;
+      background: rgba(255,255,255,0.4);
+      min-height: 220px;
+    }
+    @media (max-width: 1100px) { .svc-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 720px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .svc-grid { grid-template-columns: 1fr; } }
+
+    /* Industry tab pill */
+    .tab-btn {
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 10px 4px;
+      color: var(--mid);
+      border-bottom: 1px solid transparent;
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .tab-btn[aria-selected="true"] {
+      color: var(--ink);
+      border-bottom-color: var(--accent);
+    }
+    .tab-btn:hover { color: var(--ink); }
+
+    /* Stacked cert bar */
+    .cert-bar {
+      display: flex;
+      width: 100%;
+      height: 18px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--dark-hair);
+    }
+    .cert-bar > span { display: block; height: 100%; }
+
+    /* Gradient testimonial card */
+    .grad-card {
+      background: linear-gradient(135deg, #F5C9A8 0%, #E8B5B5 50%, #D4C4D8 100%);
+      border-radius: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Leadership initials backgrounds */
+    .portrait {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 300;
+      font-size: 120px;
+      letter-spacing: -0.04em;
+      color: rgba(26,22,18,0.78);
+      border: 1px solid var(--hair);
+      position: relative;
+      overflow: hidden;
+    }
+    .portrait-1 { background: radial-gradient(120% 90% at 20% 20%, #F5C9A8, #E8B5B5 60%, #D4C4D8); }
+    .portrait-2 { background: radial-gradient(120% 90% at 80% 30%, #F0BC85, #F5C9A8 55%, #E8B5B5); }
+    .portrait-3 { background: radial-gradient(120% 90% at 50% 80%, #D4C4D8, #E8B5B5 60%, #F5C9A8); }
+
+    /* Map dot pulse */
+    @keyframes mapPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.6); opacity: 0.4; }
+    }
+    .map-dot { transform-origin: center; animation: mapPulse 2.2s ease-in-out infinite; }
+
+    /* Mobile drawer */
+    .drawer { transform: translateX(100%); transition: transform .35s ease; }
+    .drawer.open { transform: translateX(0); }
+
+    /* Headline tightening */
+    .h-display {
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      line-height: 1.02;
+    }
+    .h-section {
+      font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 300;
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+    }
+
+    /* Browser frame */
+    .browser-frame {
+      border: 1px solid var(--hair);
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 30px 80px -50px rgba(26,22,18,0.45);
+      overflow: hidden;
+    }
+    .browser-bar {
+      background: var(--paper2);
+      border-bottom: 1px solid var(--hair);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .tl-dot { width: 10px; height: 10px; border-radius: 999px; }
+  </style>
+</head>
+<body class="bg-paper text-ink antialiased">
+
+  <!-- ============== STICKY NAV ============== -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-colors duration-300">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between">
+      <a href="#top" class="flex items-baseline gap-1.5">
+        <span class="font-serif text-[26px] font-medium tracking-tight">Vervon</span>
+        <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-mid mb-0.5">tech</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-8 text-[14px] text-inksoft" aria-label="Primary">
+        <a href="#industries" class="hover:text-accent transition-colors">Industries</a>
+        <a href="#services" class="hover:text-accent transition-colors">Services</a>
+        <a href="#why" class="hover:text-accent transition-colors">Why Vervon</a>
+        <a href="#partners" class="hover:text-accent transition-colors">Partners</a>
+        <a href="#about" class="hover:text-accent transition-colors">About</a>
+        <a href="#careers" class="hover:text-accent transition-colors">Careers</a>
+      </nav>
+      <div class="hidden lg:flex items-center gap-5">
+        <a href="#cta" class="btn-black text-[13px] py-3 px-5">
+          Book a demo
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+      <button id="menuToggle" class="lg:hidden p-2 rounded-md border border-hair bg-white/60" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div id="mobileDrawer" class="drawer lg:hidden fixed top-0 right-0 h-screen w-[88%] max-w-[380px] bg-paper border-l border-hair z-50 p-6 flex flex-col">
+      <div class="flex items-center justify-between mb-10">
+        <span class="font-serif text-[24px]">Vervon<span class="font-mono text-[10px] tracking-[0.2em] uppercase text-mid ml-1">tech</span></span>
+        <button id="menuClose" class="p-2 border border-hair rounded-md" aria-label="Close menu">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-5 text-[20px] font-serif" aria-label="Mobile">
+        <a href="#industries" data-close>Industries</a>
+        <a href="#services" data-close>Services</a>
+        <a href="#why" data-close>Why Vervon</a>
+        <a href="#partners" data-close>Partners</a>
+        <a href="#about" data-close>About</a>
+        <a href="#careers" data-close>Careers</a>
+      </nav>
+      <div class="mt-auto pt-8 border-t border-hair">
+        <div class="font-mono text-[11px] text-mid leading-relaxed">
+          AU +61 0421 531 111<br/>
+          IN +91 91676 31111
+        </div>
+        <a href="#cta" data-close class="btn-black mt-5 w-full justify-center">Book Appian assessment <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============== HERO ============== -->
+    <section class="relative hero-gradient grain overflow-hidden pt-[140px] pb-[120px]">
+      <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
+        <!-- Eyebrow pill -->
+        <div class="reveal flex justify-center">
+          <div class="inline-flex items-center gap-2 pill bg-white/50 backdrop-blur border border-white/60 px-4 py-1.5">
+            <span class="dot-pulse" aria-hidden="true"></span>
+            <span class="font-mono text-[11px] tracking-[0.18em] uppercase text-inksoft">Appian Trusted &amp; Advantage Partner</span>
+          </div>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="reveal h-display text-center mt-7 text-[44px] sm:text-[58px] md:text-[68px] lg:text-[78px] max-w-[1080px] mx-auto">
+          Hyperautomation,<br/>
+          <span class="italic-accent">engineered</span> on Appian.
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="reveal mt-7 text-center text-[17px] md:text-[19px] text-inksoft max-w-[680px] mx-auto leading-relaxed">
+          We deliver low-code transformation programs on the Appian Platform — extended with AI, ML, and RPA, and backed by 30+ years of industry expertise.
+        </p>
+
+        <!-- CTAs -->
+        <div class="reveal mt-9 flex flex-col sm:flex-row gap-3 justify-center items-center">
+          <a href="#cta" class="btn-black">
+            Book a demo
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#services" class="btn-ghost">Explore the services</a>
+        </div>
+
+        <!-- Metadata strip -->
+        <div class="reveal mt-10 flex justify-center">
+          <div class="font-mono text-[11px] tracking-[0.16em] uppercase text-mid text-center">
+            FOUNDED 2021 &nbsp;<span class="text-accent">◇</span>&nbsp; HUBS SYD · HYD &nbsp;<span class="text-accent">◇</span>&nbsp; FOCUS Appian-native
+          </div>
+        </div>
+
+        <!-- ============== PRODUCT VISUALIZATION ============== -->
+        <div class="reveal mt-16 lg:mt-20 max-w-[1100px] mx-auto">
+          <div class="browser-frame">
+            <div class="browser-bar">
+              <span class="tl-dot" style="background:#F25F5C"></span>
+              <span class="tl-dot" style="background:#F0BC85"></span>
+              <span class="tl-dot" style="background:#7FB069"></span>
+              <div class="flex-1 mx-3">
+                <div class="bg-white border border-hair rounded-md px-3 py-1.5 font-mono text-[11px] text-inksoft flex items-center gap-2 normal-case" style="letter-spacing:0;">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M9 5V3a3 3 0 1 0-6 0v2M2.5 5h7v6h-7z" stroke="#6B6862" stroke-width="1"/></svg>
+                  workflow.appian / loan-origination.v3
+                </div>
+              </div>
+              <div class="font-mono text-[10px] tracking-[0.18em] text-accent flex items-center gap-1.5">
+                <span class="dot-pulse" style="width:6px;height:6px"></span> LIVE
+              </div>
+            </div>
+
+            <!-- Workflow canvas -->
+            <div class="relative dot-grid p-6 sm:p-10" style="background-color:#FCFAF5;">
+              <svg viewBox="0 0 1000 520" class="w-full h-auto" role="img" aria-label="Illustrative Appian loan origination workflow diagram">
+                <defs>
+                  <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                    <path d="M0 0 L10 5 L0 10 z" fill="#B8AE9C"/>
+                  </marker>
+                  <marker id="arrowCoral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                    <path d="M0 0 L10 5 L0 10 z" fill="#D94F2C"/>
+                  </marker>
+                </defs>
+
+                <!-- Connecting lines (gray base + coral animated) -->
+                <!-- Intake -> Verify -->
+                <path class="flow-base" d="M 175 130 L 285 130" marker-end="url(#arrowGray)"/>
+                <path class="flow-dash" d="M 175 130 L 285 130"/>
+                <!-- Verify -> Risk -->
+                <path class="flow-base" d="M 445 130 L 555 130" marker-end="url(#arrowGray)"/>
+                <path class="flow-dash" d="M 445 130 L 555 130"/>
+                <!-- Risk -> Decision -->
+                <path class="flow-base" d="M 715 130 L 825 130" marker-end="url(#arrowGray)"/>
+                <path class="flow-dash" d="M 715 130 L 825 130"/>
+
+                <!-- Decision branches -->
+                <!-- Decision -> Underwriter -->
+                <path class="flow-base" d="M 870 200 C 870 270, 540 280, 540 340" marker-end="url(#arrowGray)"/>
+                <path class="flow-dash" d="M 870 200 C 870 270, 540 280, 540 340"/>
+                <!-- Decision -> Notification -->
+                <path class="flow-base" d="M 870 200 C 870 290, 200 300, 200 350" marker-end="url(#arrowGray)"/>
+                <path class="flow-dash" d="M 870 200 C 870 290, 200 300, 200 350"/>
+
+                <!-- Customer 360 dashed link -->
+                <path d="M 555 130 L 555 50 L 920 50 L 920 95" stroke="#B8AE9C" stroke-width="1" stroke-dasharray="3 4" fill="none"/>
+
+                <!-- Node: Loan Intake (start) -->
+                <foreignObject x="50" y="92" width="135" height="76">
+                  <div xmlns="http://www.w3.org/1999/xhtml" style="border:1px solid #E5DCCB;background:#fff;border-radius:10px;padding:10px 12px;font-family:Lexend,sans-serif;">
+                    <div style="display:flex;align-items:center;gap:6px;font-family:Lexend,sans-serif;font-size:9px;letter-spacing:0.14em;color:#6B6862;text-transform:uppercase;">
+                      <span style="width:6px;height:6px;background:#7FB069;border-radius:99px;display:inline-block"></span> START
+                    </div>
+                    <div style="font-size:13px;font-weight:500;margin-top:4px;color:#1A1612">Loan Intake</div>
+                    <div style="font-size:10px;color:#6B6862;margin-top:2px">Customer submits</div>
+                  </div>
+                </foreignObject>
+
+                <!-- Node: Document Verify -->
+                <foreignObject x="285" y="92" width="160" height="76">
+                  <div xmlns="http://www.w3.org/1999/xhtml" style="border:1px solid #E5DCCB;background:#fff;border-radius:10px;padding:10px 12px;font-family:Lexend,sans-serif;">
+                    <div style="display:flex;align-items:center;gap:6px;font-family:Lexend,sans-serif;font-size:9px;letter-spacing:0.14em;color:#6B6862;text-transform:uppercase;">
+                      <span style="width:6px;height:6px;background:#5B8FBF;border-radius:99px;display:inline-block"></span> PROCESS
+                    </div>
+                    <div style="font-size:13px;font-weight:500;margin-top:4px;color:#1A1612">Document Verify</div>
+                    <div style="font-size:10px;color:#6B6862;margin-top:2px">OCR &middot; KYC checks</div>
+                  </div>
+                </foreignObject>
+
+                <!-- Node: Risk Score -->
+                <foreignObject x="555" y="92" width="160" height="76">
+                  <div xmlns="http://www.w3.org/1999/xhtml" style="border:1px solid #E5DCCB;background:#fff;border-radius:10px;padding:10px 12px;font-family:Lexend,sans-serif;">
+                    <div style="display:flex;align-items:center;gap:6px;font-family:Lexend,sans-serif;font-size:9px;letter-spacing:0.14em;color:#6B6862;text-transform:uppercase;">
+                      <span style="width:6px;height:6px;background:#5B8FBF;border-radius:99px;display:inline-block"></span> AI / ML
+                    </div>
+                    <div style="font-size:13px;font-weight:500;margin-top:4px;color:#1A1612">Risk Score</div>
+                    <div style="font-size:10px;color:#6B6862;margin-top:2px">Model v2.4 &middot; PD/LGD</div>
+                  </div>
+                </foreignObject>
+
+                <!-- Node: Decision Engine (highlighted coral) -->
+                <foreignObject x="825" y="92" width="160" height="106">
+                  <div xmlns="http://www.w3.org/1999/xhtml" style="border:1.5px solid #D94F2C;background:#fff;border-radius:10px;padding:10px 12px;font-family:Lexend,sans-serif;box-shadow:0 0 0 3px rgba(217,79,44,0.10);">
+                    <div style="display:flex;align-items:center;gap:6px;font-family:Lexend,sans-serif;font-size:9px;letter-spacing:0.14em;color:#D94F2C;text-transform:uppercase;">
+                      <span style="width:6px;height:6px;background:#D94F2C;border-radius:99px;display:inline-block"></span> Decision
+                    </div>
+                    <div style="font-size:13px;font-weight:500;margin-top:4px;color:#1A1612">Decision Engine</div>
+                    <div style="font-size:10px;color:#6B6862;margin-top:2px">Auto-approve / refer</div>
+                    <div style="margin-top:8px;display:flex;gap:6px;font-family:Lexend,sans-serif;font-size:9px">
+                      <span style="background:#F4ECDF;padding:2px 6px;border-radius:4px;color:#1A1612">STP 64%</span>
+                      <span style="background:#F4ECDF;padding:2px 6px;border-radius:4px;color:#1A1612">REF 36%</span>
+                    </div>
+                  </div>
+                </foreignObject>
+
+                <!-- Branch: Underwriter Review (manual) -->
+                <foreignObject x="455" y="335" width="170" height="76">
+                  <div xmlns="http://www.w3.org/1999/xhtml" style="border:1px solid #E5DCCB;background:#fff;border-radius:10px;padding:10px 12px;font-family:Lexend,sans-serif;">
+                    <div style="display:flex;align-items:center;gap:6px;font-family:Lexend,sans-serif;font-size:9px;letter-spacing:0.14em;color:#6B6862;text-transform:uppercase;">
+                      <span style="width:6px;height:6px;background:#9C9489;border-radius:99px;display:inline-block"></span> MANUAL
+                    </div>
+                    <div style="font-size:13px;font-weight:500;margin-top:4px;color:#1A1612">Underwriter Review</div>
+                    <div style="font-size:10px;color:#6B6862;margin-top:2px">SLA &middot; 4h queue</div>
+                  </div>
+                </foreignObject>
+
+                <!-- Branch: Notification (auto STP) -->
+                <foreignObject x="115" y="345" width="170" height="76">
+                  <div xmlns="http://www.w3.org/1999/xhtml" style="border:1px solid #E5DCCB;background:#fff;border-radius:10px;padding:10px 12px;font-family:Lexend,sans-serif;">
+                    <div style="display:flex;align-items:center;gap:6px;font-family:Lexend,sans-serif;font-size:9px;letter-spacing:0.14em;color:#6B6862;text-transform:uppercase;">
+                      <span style="width:6px;height:6px;background:#7FB069;border-radius:99px;display:inline-block"></span> AUTO &middot; STP
+                    </div>
+                    <div style="font-size:13px;font-weight:500;margin-top:4px;color:#1A1612">Notification</div>
+                    <div style="font-size:10px;color:#6B6862;margin-top:2px">Email &middot; SMS &middot; portal</div>
+                  </div>
+                </foreignObject>
+
+                <!-- Side: Customer 360 -->
+                <foreignObject x="855" y="290" width="125" height="106">
+                  <div xmlns="http://www.w3.org/1999/xhtml" style="border:1px dashed #B8AE9C;background:rgba(255,255,255,0.6);border-radius:10px;padding:10px 12px;font-family:Lexend,sans-serif;">
+                    <div style="font-family:Lexend,sans-serif;font-size:9px;letter-spacing:0.14em;color:#6B6862;text-transform:uppercase;">CUSTOMER 360</div>
+                    <div style="font-size:12px;font-weight:500;margin-top:6px;color:#1A1612">Linked record</div>
+                    <div style="font-size:10px;color:#6B6862;margin-top:2px">Read-only mirror</div>
+                    <div style="font-family:Lexend,sans-serif;font-size:9px;color:#D94F2C;margin-top:6px">↗ open</div>
+                  </div>
+                </foreignObject>
+              </svg>
+
+              <!-- Canvas footer -->
+              <div class="mt-2 flex items-center justify-between font-mono text-[10px] tracking-[0.14em] text-mid uppercase">
+                <span>Illustrative · not a real customer flow</span>
+                <span>v3.1.0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== TRUSTED BY LEADERS ============== -->
+    <section class="bg-black pt-[64px] pb-[80px] lg:pt-24 lg:pb-28">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+        <h2 class="reveal text-center font-display leading-tight text-[28px] lg:text-[36px]" style="color:#FAF6EF;">
+          Trusted by <span style="color:#D94F2C;font-weight:600;">500+ leaders</span> across industries
+        </h2>
+        <div class="reveal mt-14 lg:mt-16 flex justify-center">
+          <img
+            src="assets/clients-strip.png"
+            alt="Trusted by Westpac, Pfizer, Appian, Howard Hughes, Honeywell, Novartis, MUFG, Infosys, Ramsay Health Care, Chola, DXC Technology, WNS Vuram, Accenture, and Persistent"
+            class="w-full max-w-[1100px] h-auto"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== TRUST STATS BAR ============== -->
+    <section class="py-[96px] lg:py-[120px]">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div class="reveal stats-bar rounded-md">
+          <div>
+            <div class="mono-label">Partnership</div>
+            <div class="font-serif text-[34px] md:text-[40px] mt-2 leading-tight">Trusted &amp; Advantage</div>
+            <div class="text-[13px] text-mid mt-1">Appian Professional Services</div>
+          </div>
+          <div>
+            <div class="mono-label">Workforce certified</div>
+            <div class="font-serif text-[44px] md:text-[56px] mt-2 leading-none"><span class="counter" data-target="100">0</span><span class="text-accent">%</span></div>
+            <div class="text-[13px] text-mid mt-1">Every engineer credentialed</div>
+          </div>
+          <div>
+            <div class="mono-label">L2 · Senior Developer</div>
+            <div class="font-serif text-[44px] md:text-[56px] mt-2 leading-none"><span class="counter" data-target="35">0</span><span class="text-accent">%</span></div>
+            <div class="text-[13px] text-mid mt-1">Above partner-network avg.</div>
+          </div>
+          <div>
+            <div class="mono-label">L3 · Lead Developer</div>
+            <div class="font-serif text-[44px] md:text-[56px] mt-2 leading-none"><span class="counter" data-target="25">0</span><span class="text-accent">%</span></div>
+            <div class="text-[13px] text-mid mt-1">Architects, not generalists</div>
+          </div>
+          <div>
+            <div class="mono-label">Presence</div>
+            <div class="font-serif text-[34px] md:text-[40px] mt-2 leading-tight">Sydney · Hyderabad</div>
+            <div class="text-[13px] text-mid mt-1">Two hubs, one team</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CAPABILITIES ============== -->
+    <section id="services" class="pb-[96px] lg:pb-[128px]">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div class="grid lg:grid-cols-12 gap-10 mb-14">
+          <div class="lg:col-span-7 reveal">
+            <div class="mono-label mb-5">01 · Capabilities</div>
+            <h2 class="h-section text-[42px] md:text-[56px] max-w-[640px]">
+              Built around <span class="italic-accent">Appian.</span> Extended with AI, ML, and RPA.
+            </h2>
+          </div>
+          <div class="lg:col-span-5 lg:col-start-8 lg:self-end reveal">
+            <p class="text-inksoft text-[15px] leading-relaxed max-w-[440px] lg:ml-auto">
+              We are an Appian-native consultancy. Process mining, intelligent automation, and integration are not adjacencies — they are how we make Appian workflows decide, act, and connect with the rest of your enterprise stack.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal cap-grid">
+          <article>
+            <div class="flex items-start justify-between mb-10">
+              <div class="font-mono text-[12px] text-mid">01</div>
+              <!-- 4-square grid icon -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" stroke="#1A1612" stroke-width="1.2"/>
+                <rect x="14" y="3" width="7" height="7" stroke="#1A1612" stroke-width="1.2"/>
+                <rect x="3" y="14" width="7" height="7" stroke="#1A1612" stroke-width="1.2"/>
+                <rect x="14" y="14" width="7" height="7" stroke="#D94F2C" stroke-width="1.2"/>
+              </svg>
+            </div>
+            <h3 class="font-serif text-[26px] leading-tight">Appian Low-Code Platform</h3>
+            <p class="text-[14.5px] text-inksoft leading-relaxed mt-3">
+              Process mining, workflow, and BPM — built natively on Appian by engineers who've earned the platform's hardest certifications.
+            </p>
+            <a href="#cta" class="mt-8 inline-flex items-center gap-1.5 text-[13px] font-medium text-ink hover:text-accent transition-colors">Learn more <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <div class="flex items-start justify-between mb-10">
+              <div class="font-mono text-[12px] text-mid">02</div>
+              <!-- intelligence/sun icon -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="4" stroke="#1A1612" stroke-width="1.2"/>
+                <path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke="#1A1612" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="font-serif text-[26px] leading-tight">Intelligent Automation</h3>
+            <p class="text-[14.5px] text-inksoft leading-relaxed mt-3">
+              RPA bots and AI/ML models embedded directly into Appian flows — making decisions, not just routing tasks.
+            </p>
+            <a href="#cta" class="mt-8 inline-flex items-center gap-1.5 text-[13px] font-medium text-ink hover:text-accent transition-colors">Learn more <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <div class="flex items-start justify-between mb-10">
+              <div class="font-mono text-[12px] text-mid">03</div>
+              <!-- connected nodes icon -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="5" cy="6" r="2" stroke="#1A1612" stroke-width="1.2"/>
+                <circle cx="19" cy="6" r="2" stroke="#1A1612" stroke-width="1.2"/>
+                <circle cx="12" cy="18" r="2" stroke="#D94F2C" stroke-width="1.2"/>
+                <path d="M6.5 7.5l4.5 9M17.5 7.5l-4.5 9M7 6h10" stroke="#1A1612" stroke-width="1.2"/>
+              </svg>
+            </div>
+            <h3 class="font-serif text-[26px] leading-tight">Enterprise Integration</h3>
+            <p class="text-[14.5px] text-inksoft leading-relaxed mt-3">
+              APIs, legacy systems, and data layer modernization — so Appian doesn't sit in a silo, it becomes the orchestration layer.
+            </p>
+            <a href="#cta" class="mt-8 inline-flex items-center gap-1.5 text-[13px] font-medium text-ink hover:text-accent transition-colors">Learn more <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== DARK BENTO — WHY VERVON ============== -->
+    <section id="why" class="relative bg-dark text-paper grain grain-light overflow-hidden py-[96px] lg:py-[128px]">
+      <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div class="grid lg:grid-cols-12 gap-10 mb-14">
+          <div class="lg:col-span-7 reveal">
+            <div class="font-mono text-[11px] tracking-[0.18em] uppercase text-paper2/70 mb-5">02 · Why Vervon</div>
+            <h2 class="h-section text-[44px] md:text-[56px] text-paper">Six things that make Vervon <span class="italic-accent" style="color:#E89F4A">different.</span></h2>
+          </div>
+          <div class="lg:col-span-5 lg:col-start-8 lg:self-end reveal">
+            <p class="text-paper/80 text-[15px] leading-relaxed max-w-[440px] lg:ml-auto">
+              We didn't pick "digital transformation" as our category. We picked Appian. And then went deeper than anyone in our market.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal bento">
+          <article>
+            <div class="flex items-center gap-3 mb-6">
+              <!-- badge icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2l3 3 4-1-1 4 3 3-3 3 1 4-4-1-3 3-3-3-4 1 1-4-3-3 3-3-1-4 4 1z" stroke="#E89F4A" stroke-width="1.2" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="3" stroke="#E89F4A" stroke-width="1.2"/>
+              </svg>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-paper2/70">Depth</span>
+            </div>
+            <h3 class="font-serif text-[24px] text-paper leading-tight">Certified at depth</h3>
+            <p class="text-paper/70 text-[14px] leading-relaxed mt-3">
+              100% certified, 35% L2, 25% L3 — by far the densest Appian credentialing in our market.
+            </p>
+          </article>
+          <article>
+            <div class="flex items-center gap-3 mb-6">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2l8 3v6c0 5-4 9-8 11-4-2-8-6-8-11V5l8-3z" stroke="#E89F4A" stroke-width="1.2" stroke-linejoin="round"/>
+                <path d="M9 12l2 2 4-4" stroke="#E89F4A" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-paper2/70">Compliance</span>
+            </div>
+            <h3 class="font-serif text-[24px] text-paper leading-tight">Regulated-industry fluent</h3>
+            <p class="text-paper/70 text-[14px] leading-relaxed mt-3">
+              Fluent in KYC, AML, audit trails, SOX, GDPR, RBI, APRA — not learning on your time.
+            </p>
+          </article>
+          <article>
+            <div class="flex items-center gap-3 mb-6">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 5h18l-7 9v6l-4-2v-4z" stroke="#E89F4A" stroke-width="1.2" stroke-linejoin="round"/>
+              </svg>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-paper2/70">Rigor</span>
+            </div>
+            <h3 class="font-serif text-[24px] text-paper leading-tight">Zero L1 padding</h3>
+            <p class="text-paper/70 text-[14px] leading-relaxed mt-3">
+              Every engineer ships. We don't bill juniors as seniors or pad teams to grow margin.
+            </p>
+          </article>
+          <article>
+            <div class="flex items-center gap-3 mb-6">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" stroke="#E89F4A" stroke-width="1.2"/>
+                <path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18" stroke="#E89F4A" stroke-width="1.2"/>
+              </svg>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-paper2/70">Delivery</span>
+            </div>
+            <h3 class="font-serif text-[24px] text-paper leading-tight">Two-hub delivery</h3>
+            <p class="text-paper/70 text-[14px] leading-relaxed mt-3">
+              Sydney advisory + Hyderabad build velocity — one team, one playbook, 24/7 cycles.
+            </p>
+          </article>
+          <article>
+            <div class="flex items-center gap-3 mb-6">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-7h6v7M11 11h2" stroke="#E89F4A" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+              </svg>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-paper2/70">Architecture</span>
+            </div>
+            <h3 class="font-serif text-[24px] text-paper leading-tight">Architecture-first</h3>
+            <p class="text-paper/70 text-[14px] leading-relaxed mt-3">
+              Senior architects on every engagement from day one — no rebuilds in year two.
+            </p>
+          </article>
+          <article>
+            <div class="flex items-center gap-3 mb-6">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke="#E89F4A" stroke-width="1.2" stroke-linejoin="round"/>
+              </svg>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-paper2/70">Native</span>
+            </div>
+            <h3 class="font-serif text-[24px] text-paper leading-tight">AI / ML / RPA native</h3>
+            <p class="text-paper/70 text-[14px] leading-relaxed mt-3">
+              Process mining and automation built into Appian flows from the design phase, not bolted on.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== INDUSTRIES TABS ============== -->
+    <section id="industries" class="py-[96px] lg:py-[128px]">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div class="grid lg:grid-cols-12 gap-10 mb-12">
+          <div class="lg:col-span-8 reveal">
+            <div class="mono-label mb-5">03 · Industries</div>
+            <h2 class="h-section text-[42px] md:text-[56px] max-w-[820px]">
+              Five industries. Deep <span class="italic-accent">specialization</span> in each.
+            </h2>
+          </div>
+        </div>
+
+        <!-- Tab nav -->
+        <div role="tablist" aria-label="Industries" class="reveal flex flex-wrap gap-x-10 gap-y-3 border-b border-hair mb-12">
+          <button role="tab" aria-selected="true" aria-controls="tab-banking" id="tabbtn-banking" class="tab-btn" data-tab="banking">Banking</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-fs" id="tabbtn-fs" class="tab-btn" data-tab="fs">Financial Services</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-telecom" id="tabbtn-telecom" class="tab-btn" data-tab="telecom">Telecom</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-retail" id="tabbtn-retail" class="tab-btn" data-tab="retail">Retail</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-gov" id="tabbtn-gov" class="tab-btn" data-tab="gov">Government</button>
+        </div>
+
+        <!-- Panels -->
+        <div class="reveal">
+
+          <div role="tabpanel" id="tab-banking" aria-labelledby="tabbtn-banking" class="tab-panel">
+            <h3 class="font-serif text-[28px] md:text-[34px] mb-3">Banking</h3>
+            <p class="text-inksoft text-[16px] max-w-[760px] mb-10">Origination, compliance, and dispute workflows that move at retail speed without breaking audit.</p>
+            <div class="grid md:grid-cols-3 border border-hair">
+              <div class="p-7 border-b md:border-b-0 md:border-r border-hair card-hair">
+                <div class="mono-label">Use case 01</div>
+                <div class="font-serif text-[22px] mt-3">Loan origination</div>
+                <p class="text-[14px] text-inksoft mt-2 leading-relaxed">End-to-end origination — from intake to disbursement — with embedded KYC, risk, and decisioning.</p>
+              </div>
+              <div class="p-7 border-b md:border-b-0 md:border-r border-hair card-hair">
+                <div class="mono-label">Use case 02</div>
+                <div class="font-serif text-[22px] mt-3">KYC / AML workflows</div>
+                <p class="text-[14px] text-inksoft mt-2 leading-relaxed">Continuous screening, alert triage, and case management with audit-ready evidence trails.</p>
+              </div>
+              <div class="p-7 card-hair">
+                <div class="mono-label">Use case 03</div>
+                <div class="font-serif text-[22px] mt-3">Dispute management</div>
+                <p class="text-[14px] text-inksoft mt-2 leading-relaxed">Chargeback and dispute orchestration across channels, networks, and back-office teams.</p>
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="tab-fs" aria-labelledby="tabbtn-fs" class="tab-panel hidden">
+            <h3 class="font-serif text-[28px] md:text-[34px] mb-3">Financial Services</h3>
+            <p class="text-inksoft text-[16px] max-w-[760px] mb-10">Wealth onboarding, regulatory reporting, claims — straight-through where possible, exception-handled where needed.</p>
+            <div class="grid md:grid-cols-3 border border-hair">
+              <div class="p-7 border-b md:border-b-0 md:border-r border-hair card-hair">
+                <div class="mono-label">Use case 01</div>
+                <div class="font-serif text-[22px] mt-3">Wealth onboarding</div>
+                <p class="text-[14px] text-inksoft mt-2 leading-relaxed">Adviser-led and digital onboarding with suitability checks and source-of-funds verification.</p>
+              </div>
+              <div class="p-7 border-b md:border-b-0 md:border-r border-hair card-hair">
+                <div class="mono-label">Use case 02</div>
+                <div class="font-serif text-[22px] mt-3">Regulatory reporting</div>
+                <p class="text-[14px] text-inksoft mt-2 leading-relaxed">Workflow-driven submissions with controls, lineage, and exception management baked in.</p>
+              </div>
+              <div class="p-7 card-hair">
+                <div class="mono-label">Use case 03</div>
+                <div class="font-serif text-[22px] mt-3">Claims processing</div>
+                <p class="text-[14px] text-inksoft mt-2 leading-relaxed">FNOL through settlement, with ML-assisted triage and automated payments where eligible.</p>
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="tab-telecom" aria-labelledby="tabbtn-telecom" class="tab-panel hidden">
+            <h3 class="font-serif text-[28px] md:text-[34px] mb-3">Telecom</h3>
+            <p class="text-inksoft text-[16px] max-w-[760px] mb-10">Order-to-activate, network change, and customer 360 — fewer truck rolls, faster activation, cleaner data.</p>
+            <div class="grid md:grid-cols-3 border border-hair">
+              <div class="p-7 border-b md:border-b-0 md:border-r border-hair card-hair">
+                <div class="mono-label">Use case 01</div>
+                <div class="font-serif text-[22px] mt-3">Order-to-activate</div>
+                <p class="text-[14px] text-inksoft mt-2 leading-relaxed">Orchestration across BSS/OSS — provisioning, activation, and exception handling with full traceability.</p>
+              </div>
+              <div class="p-7 border-b md:border-b-0 md:border-r border-hair card-hair">
+                <div class="mono-label">Use case 02</div>
+                <div class="font-serif text-[22px] mt-3">Network change</div>
+                <p class="text-[14px] text-inksoft mt-2 leading-relaxed">Change-control workflows with risk scoring, approvals, and post-implementation review.</p>
+              </div>
+              <div class="p-7 card-hair">
+                <div class="mono-label">Use case 03</div>
+                <div class="font-serif text-[22px] mt-3">Customer 360</div>
+                <p class="text-[14px] text-inksoft mt-2 leading-relaxed">Unified customer record across products, channels, and entitlements — surfaced in care and retail.</p>
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="tab-retail" aria-labelledby="tabbtn-retail" class="tab-panel hidden">
+            <h3 class="font-serif text-[28px] md:text-[34px] mb-3">Retail</h3>
+            <p class="text-inksoft text-[16px] max-w-[760px] mb-10">Vendor onboarding, store operations, returns automation — back-office speed for storefront-pace businesses.</p>
+            <div class="grid md:grid-cols-3 border border-hair">
+              <div class="p-7 border-b md:border-b-0 md:border-r border-hair card-hair">
+                <div class="mono-label">Use case 01</div>
+                <div class="font-serif text-[22px] mt-3">Vendor onboarding</div>
+                <p class="text-[14px] text-inksoft mt-2 leading-relaxed">Due diligence, contracts, and master-data setup — compressed from weeks to days.</p>
+              </div>
+              <div class="p-7 border-b md:border-b-0 md:border-r border-hair card-hair">
+                <div class="mono-label">Use case 02</div>
+                <div class="font-serif text-[22px] mt-3">Store operations</div>
+                <p class="text-[14px] text-inksoft mt-2 leading-relaxed">Task management, audits, and incident workflows that work on a tablet behind the till.</p>
+              </div>
+              <div class="p-7 card-hair">
+                <div class="mono-label">Use case 03</div>
+                <div class="font-serif text-[22px] mt-3">Returns automation</div>
+                <p class="text-[14px] text-inksoft mt-2 leading-relaxed">Returns intake, fraud scoring, refunds, and reverse logistics — orchestrated end-to-end.</p>
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="tab-gov" aria-labelledby="tabbtn-gov" class="tab-panel hidden">
+            <h3 class="font-serif text-[28px] md:text-[34px] mb-3">Government</h3>
+            <p class="text-inksoft text-[16px] max-w-[760px] mb-10">Citizen services, case management, grant administration — auditable workflows that hold up to public scrutiny.</p>
+            <div class="grid md:grid-cols-3 border border-hair">
+              <div class="p-7 border-b md:border-b-0 md:border-r border-hair card-hair">
+                <div class="mono-label">Use case 01</div>
+                <div class="font-serif text-[22px] mt-3">Citizen services</div>
+                <p class="text-[14px] text-inksoft mt-2 leading-relaxed">Service-request intake, identity verification, and outcome tracking with public-facing transparency.</p>
+              </div>
+              <div class="p-7 border-b md:border-b-0 md:border-r border-hair card-hair">
+                <div class="mono-label">Use case 02</div>
+                <div class="font-serif text-[22px] mt-3">Case management</div>
+                <p class="text-[14px] text-inksoft mt-2 leading-relaxed">Caseworker desktops with rules, SLAs, escalation, and full evidence chain across agencies.</p>
+              </div>
+              <div class="p-7 card-hair">
+                <div class="mono-label">Use case 03</div>
+                <div class="font-serif text-[22px] mt-3">Grant administration</div>
+                <p class="text-[14px] text-inksoft mt-2 leading-relaxed">Application, scoring, award, and acquittal — every step auditable and time-stamped.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== SERVICES — HOW WE ENGAGE ============== -->
+    <section id="partners" class="py-[96px] lg:py-[128px] bg-paper2/40 border-y border-hair">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div class="grid lg:grid-cols-12 gap-10 mb-12">
+          <div class="lg:col-span-7 reveal">
+            <div class="mono-label mb-5">02 · Services</div>
+            <h2 class="h-section text-[42px] md:text-[56px] max-w-[700px]">How we <span class="italic-accent">engage.</span></h2>
+          </div>
+          <div class="lg:col-span-5 lg:col-start-8 lg:self-end reveal">
+            <p class="text-inksoft text-[15px] leading-relaxed max-w-[440px] lg:ml-auto">
+              Five engagement tracks. Pick the shape that fits your program — or sequence them across a multi-year Appian roadmap.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal svc-grid">
+          <article>
+            <div class="font-mono text-[12px] text-mid">01</div>
+            <h3 class="font-serif text-[22px] leading-tight mt-4">Project Delivery</h3>
+            <p class="text-[13.5px] text-inksoft leading-relaxed mt-2">End-to-end Appian build, from design to go-live.</p>
+            <a href="#cta" class="mt-6 inline-flex items-center gap-1.5 text-[12.5px] font-medium hover:text-accent transition-colors">Engage <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <div class="font-mono text-[12px] text-mid">02</div>
+            <h3 class="font-serif text-[22px] leading-tight mt-4">Consulting Services</h3>
+            <p class="text-[13.5px] text-inksoft leading-relaxed mt-2">Architecture, roadmap, and Appian Center of Excellence setup.</p>
+            <a href="#cta" class="mt-6 inline-flex items-center gap-1.5 text-[12.5px] font-medium hover:text-accent transition-colors">Engage <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <div class="font-mono text-[12px] text-mid">03</div>
+            <h3 class="font-serif text-[22px] leading-tight mt-4">Managed Services</h3>
+            <p class="text-[13.5px] text-inksoft leading-relaxed mt-2">24/7 support, enhancements, and platform health.</p>
+            <a href="#cta" class="mt-6 inline-flex items-center gap-1.5 text-[12.5px] font-medium hover:text-accent transition-colors">Engage <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <div class="font-mono text-[12px] text-mid">04</div>
+            <h3 class="font-serif text-[22px] leading-tight mt-4">Test Automation</h3>
+            <p class="text-[13.5px] text-inksoft leading-relaxed mt-2">Appian-native and integration test automation.</p>
+            <a href="#cta" class="mt-6 inline-flex items-center gap-1.5 text-[12.5px] font-medium hover:text-accent transition-colors">Engage <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <div class="font-mono text-[12px] text-mid">05</div>
+            <h3 class="font-serif text-[22px] leading-tight mt-4">Staff Augmentation</h3>
+            <p class="text-[13.5px] text-inksoft leading-relaxed mt-2">Certified Appian developers, embedded in your team.</p>
+            <a href="#cta" class="mt-6 inline-flex items-center gap-1.5 text-[12.5px] font-medium hover:text-accent transition-colors">Engage <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CERTIFICATION MOAT (DARK) ============== -->
+    <section id="cert" class="relative bg-dark text-paper grain grain-light overflow-hidden py-[96px] lg:py-[128px]">
+      <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div class="reveal max-w-[920px]">
+          <div class="font-mono text-[11px] tracking-[0.18em] uppercase text-paper2/70 mb-5">03 · Certification</div>
+          <h2 class="h-section text-[44px] md:text-[60px] text-paper">The most <span class="italic-accent" style="color:#E89F4A">credentialed</span> Appian practice you'll work with.</h2>
+          <p class="text-paper/70 text-[16px] leading-relaxed mt-6 max-w-[700px]">
+            Certification depth isn't vanity. It's why our engineers ramp on your platform in days, not weeks — and why architectural mistakes don't compound through the SDLC.
+          </p>
+        </div>
+
+        <div class="reveal mt-16 grid md:grid-cols-3 gap-8 md:gap-0 md:divide-x divide-darkhair">
+          <div class="md:pr-10">
+            <div class="font-serif font-light text-paper text-[88px] md:text-[110px] leading-none">100<span class="text-accent">%</span></div>
+            <div class="font-serif text-[20px] text-paper mt-3">Appian Certified</div>
+            <p class="text-paper/65 text-[13.5px] leading-relaxed mt-2">Every engineer who touches your delivery has passed the platform's foundational certification — no exceptions.</p>
+          </div>
+          <div class="md:px-10">
+            <div class="font-serif font-light text-paper text-[88px] md:text-[110px] leading-none">35<span class="text-accent">%</span></div>
+            <div class="font-serif text-[20px] text-paper mt-3">Senior Developers (L2)</div>
+            <p class="text-paper/65 text-[13.5px] leading-relaxed mt-2">The tier that owns design decisions on production workflows — well above the partner-network average.</p>
+          </div>
+          <div class="md:pl-10">
+            <div class="font-serif font-light text-paper text-[88px] md:text-[110px] leading-none">25<span class="text-accent">%</span></div>
+            <div class="font-serif text-[20px] text-paper mt-3">Lead Developers (L3)</div>
+            <p class="text-paper/65 text-[13.5px] leading-relaxed mt-2">Architects who can stand opposite your enterprise architecture team and hold the conversation.</p>
+          </div>
+        </div>
+
+        <!-- Stacked cert bar -->
+        <div class="reveal mt-14 max-w-[820px]">
+          <div class="cert-bar" role="img" aria-label="Certification distribution: 25% L3, 35% L2, 25% L1, remaining mixed">
+            <span style="width:25%;background:#FAF6EF"></span>
+            <span style="width:35%;background:#D94F2C"></span>
+            <span style="width:25%;background:#5B8FBF"></span>
+            <span style="width:15%;background:#2D2820"></span>
+          </div>
+          <div class="mt-3 grid grid-cols-3 gap-4 font-mono text-[10.5px] tracking-[0.14em] uppercase text-paper2/70">
+            <div><span class="inline-block w-2 h-2 mr-2 align-middle" style="background:#FAF6EF"></span>L1 Certified · 25%</div>
+            <div><span class="inline-block w-2 h-2 mr-2 align-middle" style="background:#D94F2C"></span>L2 Senior · 35%</div>
+            <div><span class="inline-block w-2 h-2 mr-2 align-middle" style="background:#5B8FBF"></span>L3 Lead · 25%</div>
+          </div>
+        </div>
+
+        <!-- Placeholder quote -->
+        <div class="reveal mt-14 max-w-[820px] border border-darkhair rounded-xl p-8 bg-black/20">
+          <div class="font-mono text-[10.5px] tracking-[0.14em] uppercase text-accentsoft">[ Client name &amp; title — pending sign-off ]</div>
+          <blockquote class="mt-4 font-serif italic text-[22px] md:text-[26px] text-paper leading-snug">
+            "Placeholder quote reserved for a verified customer testimonial. Final copy will reference quantified delivery outcomes — go-live timing, STP rates, or platform stability — and will only be published after written sign-off from the customer's legal and communications teams."
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== GRADIENT TESTIMONIAL PAIR ============== -->
+    <section class="py-[96px] lg:py-[128px]">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div class="reveal grid md:grid-cols-2 gap-6">
+
+          <!-- Left: gradient card with metric -->
+          <article class="grad-card grain p-10 md:p-12 min-h-[360px] flex flex-col justify-between">
+            <div class="font-mono text-[10.5px] tracking-[0.14em] uppercase text-ink/60">[ Illustrative ]</div>
+            <div>
+              <div class="font-serif font-light text-[88px] md:text-[110px] leading-none text-ink">3.5<span class="text-accent">×</span></div>
+              <p class="mt-5 text-ink/80 text-[15px] leading-relaxed max-w-[360px]">
+                Faster delivery vs prior systems integrator <span class="text-ink/60">(placeholder — pending case study sign-off)</span>.
+              </p>
+            </div>
+          </article>
+
+          <!-- Right: quote card -->
+          <article class="card-hair rounded-2xl p-10 md:p-12 min-h-[360px] flex flex-col justify-between bg-white/70">
+            <div>
+              <div class="font-mono text-[10.5px] tracking-[0.14em] uppercase text-mid">[ Customer story — placeholder ]</div>
+              <blockquote class="mt-5 font-serif italic text-[22px] md:text-[26px] leading-snug text-ink">
+                "We needed an Appian partner who could stand up an architecture, not just take tickets. Vervon's leads showed up with opinions on our process model, our integrations, and our governance — and were right enough often enough that we cut a year off our roadmap."
+              </blockquote>
+            </div>
+            <div class="mt-10 flex items-center gap-4">
+              <div class="w-11 h-11 rounded-full grid place-items-center font-serif text-[16px] text-ink" style="background:linear-gradient(135deg,#F5C9A8,#E8B5B5)">CN</div>
+              <div class="leading-tight">
+                <div class="font-medium text-[14px]">[ Customer name ]</div>
+                <div class="font-mono text-[10.5px] tracking-[0.12em] uppercase text-mid mt-0.5">[ Title · Company ]</div>
+              </div>
+              <a href="#cta" class="ml-auto text-[13px] font-medium hover:text-accent transition-colors">Customer story <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CASE STUDIES PLACEHOLDERS ============== -->
+    <section id="cases" class="pb-[96px] lg:pb-[128px]">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div class="grid lg:grid-cols-12 gap-10 mb-12">
+          <div class="lg:col-span-8 reveal">
+            <div class="mono-label mb-5">04 · Case Studies</div>
+            <h2 class="h-section text-[40px] md:text-[52px] max-w-[760px]">Real engagements. <span class="italic-accent">Coming soon.</span></h2>
+          </div>
+          <div class="lg:col-span-4 lg:self-end reveal">
+            <p class="text-inksoft text-[15px] leading-relaxed">
+              Detailed case studies in publication. Layout reserved for problem · approach · result narratives with verifiable metrics.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal grid md:grid-cols-3 gap-6">
+          <!-- Case 1 -->
+          <article class="card-hair rounded-xl overflow-hidden flex flex-col">
+            <div class="aspect-[4/3] bg-gradient-to-br from-[#F5C9A8] to-[#D4C4D8] grain border-b border-hair relative">
+              <div class="absolute inset-0 dot-grid opacity-30"></div>
+            </div>
+            <div class="p-7 flex flex-col flex-1">
+              <div class="mono-label">Banking</div>
+              <h3 class="font-serif text-[22px] mt-3 leading-tight">Loan origination modernization at a tier-1 bank</h3>
+              <div class="mt-auto pt-8 grid grid-cols-3 gap-3">
+                <div>
+                  <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-mid">STP</div>
+                  <div class="font-serif text-[20px] text-mid">—</div>
+                </div>
+                <div>
+                  <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-mid">Cycle</div>
+                  <div class="font-serif text-[20px] text-mid">—</div>
+                </div>
+                <div>
+                  <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-mid">NPS Δ</div>
+                  <div class="font-serif text-[20px] text-mid">—</div>
+                </div>
+              </div>
+              <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-accent mt-4">Pending publication</div>
+            </div>
+          </article>
+          <!-- Case 2 -->
+          <article class="card-hair rounded-xl overflow-hidden flex flex-col">
+            <div class="aspect-[4/3] bg-gradient-to-br from-[#E8B5B5] to-[#F0BC85] grain border-b border-hair relative">
+              <div class="absolute inset-0 dot-grid opacity-30"></div>
+            </div>
+            <div class="p-7 flex flex-col flex-1">
+              <div class="mono-label">Telecom</div>
+              <h3 class="font-serif text-[22px] mt-3 leading-tight">Order-to-activate orchestration for a national carrier</h3>
+              <div class="mt-auto pt-8 grid grid-cols-3 gap-3">
+                <div>
+                  <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-mid">Activation</div>
+                  <div class="font-serif text-[20px] text-mid">—</div>
+                </div>
+                <div>
+                  <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-mid">Truck rolls</div>
+                  <div class="font-serif text-[20px] text-mid">—</div>
+                </div>
+                <div>
+                  <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-mid">Fallout</div>
+                  <div class="font-serif text-[20px] text-mid">—</div>
+                </div>
+              </div>
+              <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-accent mt-4">Pending publication</div>
+            </div>
+          </article>
+          <!-- Case 3 -->
+          <article class="card-hair rounded-xl overflow-hidden flex flex-col">
+            <div class="aspect-[4/3] bg-gradient-to-br from-[#D4C4D8] to-[#F5C9A8] grain border-b border-hair relative">
+              <div class="absolute inset-0 dot-grid opacity-30"></div>
+            </div>
+            <div class="p-7 flex flex-col flex-1">
+              <div class="mono-label">Government</div>
+              <h3 class="font-serif text-[22px] mt-3 leading-tight">Citizen services casework for a federal department</h3>
+              <div class="mt-auto pt-8 grid grid-cols-3 gap-3">
+                <div>
+                  <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-mid">Cases / FTE</div>
+                  <div class="font-serif text-[20px] text-mid">—</div>
+                </div>
+                <div>
+                  <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-mid">SLA hit</div>
+                  <div class="font-serif text-[20px] text-mid">—</div>
+                </div>
+                <div>
+                  <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-mid">Audit</div>
+                  <div class="font-serif text-[20px] text-mid">—</div>
+                </div>
+              </div>
+              <div class="font-mono text-[10px] tracking-[0.12em] uppercase text-accent mt-4">Pending publication</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== LEADERSHIP ============== -->
+    <section id="about" class="py-[96px] lg:py-[128px] border-t border-hair">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div class="grid lg:grid-cols-12 gap-10 mb-12">
+          <div class="lg:col-span-9 reveal">
+            <div class="mono-label mb-5">05 · Leadership</div>
+            <h2 class="h-section text-[40px] md:text-[52px] max-w-[900px]">
+              Operated by a team that's been doing this for <span class="italic-accent">30+ years.</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="reveal grid md:grid-cols-3 gap-8">
+          <article>
+            <div class="portrait portrait-1" aria-hidden="true"><span>SB</span></div>
+            <div class="mt-5">
+              <div class="font-serif text-[22px]">Sikhi Bhamidipalli</div>
+              <div class="font-mono text-[11px] tracking-[0.14em] uppercase text-mid mt-1.5 flex items-center gap-3">
+                Founder &amp; CEO
+                <a href="#" aria-label="LinkedIn — Sikhi Bhamidipalli" class="ml-auto text-mid hover:text-accent transition-colors">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v15H.22V8zM8 8h4.36v2.05h.06c.61-1.16 2.1-2.38 4.32-2.38C21.4 7.67 22 10.4 22 13.78V23h-4.56v-8.18c0-1.95-.04-4.46-2.72-4.46s-3.14 2.13-3.14 4.32V23H8V8z"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div class="portrait portrait-2" aria-hidden="true"><span>KM</span></div>
+            <div class="mt-5">
+              <div class="font-serif text-[22px]">Krishna Prasad Modalavalasa</div>
+              <div class="font-mono text-[11px] tracking-[0.14em] uppercase text-mid mt-1.5 flex items-center gap-3">
+                Executive Advisory
+                <a href="#" aria-label="LinkedIn — Krishna Prasad Modalavalasa" class="ml-auto text-mid hover:text-accent transition-colors">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v15H.22V8zM8 8h4.36v2.05h.06c.61-1.16 2.1-2.38 4.32-2.38C21.4 7.67 22 10.4 22 13.78V23h-4.56v-8.18c0-1.95-.04-4.46-2.72-4.46s-3.14 2.13-3.14 4.32V23H8V8z"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div class="portrait portrait-3" aria-hidden="true"><span>RD</span></div>
+            <div class="mt-5">
+              <div class="font-serif text-[22px]">Ramachandra Reddy Dhandu</div>
+              <div class="font-mono text-[11px] tracking-[0.14em] uppercase text-mid mt-1.5 flex items-center gap-3">
+                Head of Appian Practice
+                <a href="#" aria-label="LinkedIn — Ramachandra Reddy Dhandu" class="ml-auto text-mid hover:text-accent transition-colors">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v15H.22V8zM8 8h4.36v2.05h.06c.61-1.16 2.1-2.38 4.32-2.38C21.4 7.67 22 10.4 22 13.78V23h-4.56v-8.18c0-1.95-.04-4.46-2.72-4.46s-3.14 2.13-3.14 4.32V23H8V8z"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== GLOBAL PRESENCE ============== -->
+    <section class="py-[96px] lg:py-[128px] border-t border-hair bg-paper2/40">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div class="grid lg:grid-cols-12 gap-12 items-start">
+          <div class="lg:col-span-6 reveal">
+            <div class="mono-label mb-5">06 · Presence</div>
+            <h2 class="h-section text-[40px] md:text-[52px] max-w-[520px]">Two hubs. <span class="italic-accent">One</span> delivery model.</h2>
+            <p class="mt-6 text-inksoft text-[15.5px] leading-relaxed max-w-[520px]">
+              Sydney owns advisory and customer proximity. Hyderabad owns build velocity and 24/7 platform health. One playbook across both.
+            </p>
+
+            <div class="mt-12 grid sm:grid-cols-2 gap-6">
+              <div class="card-hair rounded-xl p-6">
+                <div class="font-mono text-[10.5px] tracking-[0.16em] uppercase text-accent">Sydney · AU</div>
+                <div class="mt-3 text-[14px] leading-relaxed text-ink">
+                  Level 45, 680 George St,<br/>NSW 2000, Australia
+                </div>
+                <div class="font-mono text-[12px] text-mid mt-3">+61 (0) 421 531 111</div>
+              </div>
+              <div class="card-hair rounded-xl p-6">
+                <div class="font-mono text-[10.5px] tracking-[0.16em] uppercase text-accent">Hyderabad · IN</div>
+                <div class="mt-3 text-[14px] leading-relaxed text-ink">
+                  WeWork, Rajapushpa Summit, Nanakramguda,<br/>Financial District, Telangana 500032, India
+                </div>
+                <div class="font-mono text-[12px] text-mid mt-3">+91 (0) 91676 31111</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 reveal">
+            <div class="card-hair rounded-2xl p-6 bg-white/60">
+              <!-- Stylized world map -->
+              <svg viewBox="0 0 600 320" class="w-full h-auto" role="img" aria-label="World map indicating Sydney and Hyderabad hubs">
+                <g fill="#E5DCCB">
+                  <!-- N. America blob -->
+                  <path d="M40 90 q40 -40 90 -30 t60 30 q10 30 -20 50 t-80 20 q-50 0 -60 -30z"/>
+                  <!-- S. America blob -->
+                  <path d="M150 180 q20 -10 35 5 t10 60 q-10 30 -30 30 t-25 -40 z"/>
+                  <!-- Europe blob -->
+                  <path d="M275 80 q30 -25 70 -10 t40 35 q-20 30 -60 30 t-55 -20 z"/>
+                  <!-- Africa blob -->
+                  <path d="M295 140 q25 -10 50 5 t20 70 q-10 50 -50 60 t-50 -50 z"/>
+                  <!-- Asia blob -->
+                  <path d="M380 60 q60 -30 130 -10 t60 50 q-10 40 -90 60 t-110 -30 z"/>
+                  <!-- Oceania blob -->
+                  <path d="M480 220 q30 -10 60 0 t10 35 q-20 25 -55 20 t-25 -35 z"/>
+                </g>
+                <!-- Connecting dotted line -->
+                <path d="M442 170 Q495 215 525 235" stroke="#D94F2C" stroke-width="1" stroke-dasharray="3 4" fill="none"/>
+                <!-- Hyderabad dot -->
+                <g transform="translate(442 170)">
+                  <circle r="14" fill="#D94F2C" opacity="0.18" class="map-dot"/>
+                  <circle r="4" fill="#D94F2C"/>
+                </g>
+                <text x="450" y="160" font-family="Lexend" font-size="9" fill="#1A1612" letter-spacing="2">HYD</text>
+                <!-- Sydney dot -->
+                <g transform="translate(525 235)">
+                  <circle r="14" fill="#D94F2C" opacity="0.18" class="map-dot" style="animation-delay:.6s"/>
+                  <circle r="4" fill="#D94F2C"/>
+                </g>
+                <text x="500" y="260" font-family="Lexend" font-size="9" fill="#1A1612" letter-spacing="2">SYD</text>
+              </svg>
+              <div class="flex justify-between mt-3 font-mono text-[10px] tracking-[0.14em] uppercase text-mid">
+                <span>Map · Approximate</span>
+                <span>2 Hubs · 24/7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CTA STRIP ============== -->
+    <section id="cta" class="cta-gradient grain border-y border-hair py-[96px] lg:py-[120px] relative overflow-hidden">
+      <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7 reveal">
+            <h2 class="h-section text-[36px] md:text-[52px] max-w-[700px]">
+              Have an Appian initiative on the runway? <span class="italic-accent">Let's pressure-test it.</span>
+            </h2>
+          </div>
+          <div class="lg:col-span-5 reveal">
+            <form class="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('.ok').classList.remove('hidden');">
+              <label class="flex-1">
+                <span class="sr-only">Work email</span>
+                <input type="email" required placeholder="you@company.com" class="w-full bg-white/70 border border-hair rounded-full px-5 py-3.5 text-[14px] text-ink placeholder:text-mid focus:outline-none" />
+              </label>
+              <button type="submit" class="btn-black whitespace-nowrap">Book assessment <span class="arrow" aria-hidden="true">→</span></button>
+            </form>
+            <div class="mt-4 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.14em] text-mid">
+              <span>Or email</span>
+              <a href="mailto:info@vervontechnologies.com" class="text-ink hover:text-accent transition-colors">info@vervontechnologies.com</a>
+            </div>
+            <div class="ok hidden mt-3 font-mono text-[11px] tracking-[0.14em] uppercase text-accent">✓ Thanks — we'll be in touch within one business day.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FOOTER ============== -->
+    <footer id="careers" class="border-t border-hair bg-paper">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16">
+        <div class="grid lg:grid-cols-12 gap-10">
+          <div class="lg:col-span-5">
+            <div class="font-serif text-[28px] font-medium leading-none">Vervon<span class="font-mono text-[10px] tracking-[0.2em] uppercase text-mid ml-1.5 align-middle">tech</span></div>
+            <p class="mt-4 text-[14px] text-inksoft max-w-[360px] leading-relaxed">
+              Appian Trusted &amp; Advantage Partner. Hyderabad &amp; Sydney.
+            </p>
+            <a href="#" aria-label="LinkedIn" class="mt-6 inline-flex items-center justify-center w-9 h-9 border border-hair rounded-full hover:border-accent hover:text-accent transition-colors">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v15H.22V8zM8 8h4.36v2.05h.06c.61-1.16 2.1-2.38 4.32-2.38C21.4 7.67 22 10.4 22 13.78V23h-4.56v-8.18c0-1.95-.04-4.46-2.72-4.46s-3.14 2.13-3.14 4.32V23H8V8z"/></svg>
+            </a>
+          </div>
+
+          <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-8 text-[13.5px]">
+            <div>
+              <div class="font-mono text-[10.5px] tracking-[0.16em] uppercase text-mid mb-4">Explore</div>
+              <ul class="space-y-2.5 text-inksoft">
+                <li><a href="#about" class="hover:text-accent transition-colors">About</a></li>
+                <li><a href="#why" class="hover:text-accent transition-colors">Why Vervon</a></li>
+                <li><a href="#careers" class="hover:text-accent transition-colors">Careers</a></li>
+                <li><a href="#cta" class="hover:text-accent transition-colors">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[10.5px] tracking-[0.16em] uppercase text-mid mb-4">Industries</div>
+              <ul class="space-y-2.5 text-inksoft">
+                <li><a href="#industries" class="hover:text-accent transition-colors">Banking</a></li>
+                <li><a href="#industries" class="hover:text-accent transition-colors">Financial Services</a></li>
+                <li><a href="#industries" class="hover:text-accent transition-colors">Telecom</a></li>
+                <li><a href="#industries" class="hover:text-accent transition-colors">Retail</a></li>
+                <li><a href="#industries" class="hover:text-accent transition-colors">Government</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[10.5px] tracking-[0.16em] uppercase text-mid mb-4">Services</div>
+              <ul class="space-y-2.5 text-inksoft">
+                <li><a href="#services" class="hover:text-accent transition-colors">Project Delivery</a></li>
+                <li><a href="#services" class="hover:text-accent transition-colors">Consulting</a></li>
+                <li><a href="#services" class="hover:text-accent transition-colors">Managed Services</a></li>
+                <li><a href="#services" class="hover:text-accent transition-colors">Test Automation</a></li>
+                <li><a href="#services" class="hover:text-accent transition-colors">Staff Aug.</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[10.5px] tracking-[0.16em] uppercase text-mid mb-4">Partners</div>
+              <ul class="space-y-2.5 text-inksoft">
+                <li><a href="#partners" class="hover:text-accent transition-colors">Appian</a></li>
+                <li><a href="#partners" class="hover:text-accent transition-colors">Process Mining</a></li>
+                <li><a href="#partners" class="hover:text-accent transition-colors">RPA / AI</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-14 pt-6 border-t border-hair flex flex-col md:flex-row gap-3 md:items-center justify-between font-mono text-[11px] tracking-[0.12em] uppercase text-mid">
+          <div>© 2026 Vervon Technologies Pty Ltd — All Rights Reserved</div>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-accent transition-colors">Privacy</a>
+            <a href="#" class="hover:text-accent transition-colors">Terms</a>
+            <a href="#" class="hover:text-accent transition-colors">Security</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // ====== Sticky nav glassy on scroll ======
+    (function () {
+      const nav = document.getElementById('nav');
+      const update = () => {
+        if (window.scrollY > 12) nav.classList.add('nav-glass');
+        else nav.classList.remove('nav-glass');
+      };
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+    })();
+
+    // ====== Mobile drawer ======
+    (function () {
+      const toggle = document.getElementById('menuToggle');
+      const close = document.getElementById('menuClose');
+      const drawer = document.getElementById('mobileDrawer');
+      const open = (v) => {
+        drawer.classList.toggle('open', v);
+        toggle.setAttribute('aria-expanded', String(v));
+        document.body.style.overflow = v ? 'hidden' : '';
+      };
+      toggle.addEventListener('click', () => open(true));
+      close.addEventListener('click', () => open(false));
+      drawer.querySelectorAll('[data-close]').forEach(a => a.addEventListener('click', () => open(false)));
+    })();
+
+    // ====== Reveal on scroll (staggered 80ms within each section) ======
+    (function () {
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced) {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+        return;
+      }
+      const observed = new WeakSet();
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !observed.has(entry.target)) {
+            observed.add(entry.target);
+            const siblings = Array.from(entry.target.parentElement?.querySelectorAll(':scope > .reveal') || []);
+            const idx = Math.max(0, siblings.indexOf(entry.target));
+            setTimeout(() => entry.target.classList.add('in'), idx * 80);
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    })();
+
+    // ====== Number counters ======
+    (function () {
+      const ease = (t) => 1 - Math.pow(1 - t, 3);
+      const animate = (el) => {
+        const target = parseFloat(el.dataset.target);
+        const dur = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const t = Math.min(1, (now - start) / dur);
+          const v = target * ease(t);
+          el.textContent = Math.round(v).toString();
+          if (t < 1) requestAnimationFrame(tick);
+          else el.textContent = target.toString();
+        };
+        requestAnimationFrame(tick);
+      };
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const counters = document.querySelectorAll('.counter');
+      if (reduced) {
+        counters.forEach(el => el.textContent = el.dataset.target);
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            animate(e.target);
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(el => io.observe(el));
+    })();
+
+    // ====== Industry tabs ======
+    (function () {
+      const tabs = document.querySelectorAll('[role="tab"]');
+      const panels = document.querySelectorAll('[role="tabpanel"]');
+      const activate = (key) => {
+        tabs.forEach(t => t.setAttribute('aria-selected', String(t.dataset.tab === key)));
+        panels.forEach(p => p.classList.toggle('hidden', p.id !== 'tab-' + key));
+      };
+      tabs.forEach((t) => {
+        t.addEventListener('click', () => activate(t.dataset.tab));
+        t.addEventListener('keydown', (e) => {
+          const arr = Array.from(tabs);
+          const i = arr.indexOf(t);
+          if (e.key === 'ArrowRight') { e.preventDefault(); arr[(i + 1) % arr.length].focus(); arr[(i + 1) % arr.length].click(); }
+          if (e.key === 'ArrowLeft')  { e.preventDefault(); arr[(i - 1 + arr.length) % arr.length].focus(); arr[(i - 1 + arr.length) % arr.length].click(); }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
